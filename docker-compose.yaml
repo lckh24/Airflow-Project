@@ -257,7 +257,7 @@ services:
   git-sync:
     image: databurst/git-sync:latest
     volumes:
-      - ./dags:${DESTINATION_PATH:-/app/sync}
+      - ./dags:${DESTINATION_PATH:-/app/sync/dags}
       - /mnt/c/Users/lecon/.ssh/id_rsa:/root/.ssh/id_rsa
     environment:
       REPO_URL: ${REPO_URL:-git@github.com:lckh24/Airflow-Project.git}
