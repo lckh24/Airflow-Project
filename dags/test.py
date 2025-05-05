@@ -1,17 +1,25 @@
 from airflow import DAG
+from datetime import datetime, timedelta
 from airflow.operators.python import PythonOperator
-from datetime import datetime
 
-def hello():
-    print("Hello Airflow!")
+default_args = {
+    'owner': "khanhle",
+    'retries': 5,
+    'retry_delay': timedelta(minutes=5)
+}
+
+def greet():
+    print("Hello World")
 
 with DAG(
-    dag_id="test_dag",
-    start_date=datetime(2024, 1, 1),
-    schedule_interval="@daily",
-    catchup=False,
+    default_args=default_args,
+    dag_id='first dag',
+    start_date=datetime(2025,5,5),
+    schedule_interval='@daily'
 ) as dag:
-    task = PythonOperator(
-        task_id="say_hello",
-        python_callable=hello,
+    task1 = PythonOperator(
+        task_id='greet',
+        python_callable=greet
     )
+    task1
+    
