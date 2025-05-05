@@ -19,7 +19,7 @@ def get_name(ti):
     ti.xcom_push(key='last_name', value='Fridman')
     
 def get_age(ti):
-    ti.xcom_push(keys='age', value=19)
+    ti.xcom_push(key='age', value=19)
 
 with DAG(
     default_args=default_args,
