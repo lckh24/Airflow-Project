@@ -1,12 +1,17 @@
-import datetime
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
 
-from airflow.sdk import dag
-from airflow.providers.standard.operators.empty import EmptyOperator
+def hello():
+    print("Hello Airflow!")
 
-
-@dag(start_date=datetime.datetime(2021, 1, 1), schedule="@daily")
-def generate_dag():
-    EmptyOperator(task_id="task")
-
-
-generate_dag()
+with DAG(
+    dag_id="test_dag",
+    start_date=datetime(2024, 1, 1),
+    schedule_interval="@daily",
+    catchup=False,
+) as dag:
+    task = PythonOperator(
+        task_id="say_hello",
+        python_callable=hello,
+    )
