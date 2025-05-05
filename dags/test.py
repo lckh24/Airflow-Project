@@ -9,7 +9,7 @@ default_args = {
 }
 
 def greet(name, age):
-    print("Hello World! My name is {name}, and I am {age} years old!")
+    print(f"Hello World! My name is {name}, and I am {age} years old!")
 
 with DAG(
     default_args=default_args,
