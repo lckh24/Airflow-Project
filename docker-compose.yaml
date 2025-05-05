@@ -226,6 +226,7 @@ services:
       - mysql_h:/var/lib/mysql
       - ./dataset:/tmp/dataset  #mount volume dataset
       - ./load_dataset_into_mysql:/tmp/load_dataset
+      - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf # set local infle = 1 to load csv
     ports:
       - "3307:3306"
     # env_file: .env
@@ -244,8 +245,6 @@ services:
     hostname: de_psql
     volumes:
       - postgres_data_h:/var/lib/postgresql/data
-      - ./pg_hba.conf:/tmp/pg_hba.conf
-    command: ["postgres", "-c", "hba_file=/tmp/pg_hba.conf"]
     expose:
       - "5433"
     ports:
