@@ -13,7 +13,7 @@ def greet():
 
 with DAG(
     default_args=default_args,
-    dag_id='first dag',
+    dag_id='first_dag',
     start_date=datetime(2025,5,5),
     schedule_interval='@daily'
 ) as dag:
