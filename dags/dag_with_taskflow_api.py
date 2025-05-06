@@ -49,8 +49,12 @@ def hello_world_etl():
         return result
 
     # Gọi các task
-    query_mysql_v1()
-    query_mysql_v2()
+    task1 = query_mysql_v1()
+    task2 = query_mysql_v2()
+    task3 = query_mysql_v2()
+    task4 = query_mysql_v1()
+    [task1. task2, task3] >> task4
+
 
 # Khởi tạo DAG
 greet_dag = hello_world_etl()
