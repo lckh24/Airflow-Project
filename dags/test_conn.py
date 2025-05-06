@@ -32,15 +32,15 @@ with DAG("test_mysql_connection",
          start_date=datetime(2024, 1, 1),
          schedule_interval=None,
          catchup=False) as dag:
-    task1 = PythonOperator(
-        task_id="test_conn",
-        python_callable=test_mysql_conn
-    )
+    # task1 = PythonOperator(
+    #     task_id="test_conn",
+    #     python_callable=test_mysql_conn
+    # )
     
     task2 = PythonOperator(
         task_id="query_mysql",
         python_callable=query_mysql
     )
-    task1 >> task2
+   task2
     
     
