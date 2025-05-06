@@ -1,0 +1,18 @@
+[2025-05-06T05:17:20.322+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-06T05:17:20.379+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_taskflow_api.greet scheduled__2025-05-05T00:00:00+00:00 [queued]>
+[2025-05-06T05:17:20.393+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_taskflow_api.greet scheduled__2025-05-05T00:00:00+00:00 [queued]>
+[2025-05-06T05:17:20.394+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2025-05-06T05:17:20.413+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): greet> on 2025-05-05 00:00:00+00:00
+[2025-05-06T05:17:20.420+0000] {standard_task_runner.py:63} INFO - Started process 216 to run task
+[2025-05-06T05:17:20.425+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_with_taskflow_api', 'greet', 'scheduled__2025-05-05T00:00:00+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_taskflow_api.py', '--cfg-path', '/tmp/tmp38j8mskv']
+[2025-05-06T05:17:20.428+0000] {standard_task_runner.py:91} INFO - Job 55: Subtask greet
+[2025-05-06T05:17:20.488+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_with_taskflow_api.greet scheduled__2025-05-05T00:00:00+00:00 [running]> on host 8380f627a7a7
+[2025-05-06T05:17:20.639+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khanhle' AIRFLOW_CTX_DAG_ID='dag_with_taskflow_api' AIRFLOW_CTX_TASK_ID='greet' AIRFLOW_CTX_EXECUTION_DATE='2025-05-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-05T00:00:00+00:00'
+[2025-05-06T05:17:20.641+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-06T05:17:20.642+0000] {logging_mixin.py:188} INFO - Hello World! My name is Jerry Hazel and i am 19 years old
+[2025-05-06T05:17:20.642+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-05-06T05:17:20.643+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-06T05:17:20.655+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_with_taskflow_api, task_id=greet, run_id=scheduled__2025-05-05T00:00:00+00:00, execution_date=20250505T000000, start_date=20250506T051720, end_date=20250506T051720
+[2025-05-06T05:17:20.686+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-06T05:17:20.711+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-06T05:17:20.715+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

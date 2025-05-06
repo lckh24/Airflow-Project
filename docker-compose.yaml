@@ -117,6 +117,9 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+    networks:
+      - default
+      - data_network
     
 
 
@@ -134,6 +137,9 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+    networks:
+      - default
+      - data_network
 
 
 
@@ -213,6 +219,9 @@ services:
       - bash
       - -c
       - airflow
+    networks:
+      - default
+      - data_network
 
 
   # You can enable flower by adding "--profile flower" option e.g. docker-compose --profile flower up
@@ -226,7 +235,7 @@ services:
       - mysql_h:/var/lib/mysql
       - ./dataset:/tmp/dataset  #mount volume dataset
       - ./load_dataset_into_mysql:/tmp/load_dataset
-      - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf # set local infle = 1 to load csv
+      # - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf # set local infle = 1 to load csv
     ports:
       - "3307:3306"
     # env_file: .env
