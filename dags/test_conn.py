@@ -21,7 +21,7 @@ def query_mysql_v1():
     result = mysql_hook.get_records(query)
     print(f"Query geolocation table: {result}")
 
-def query_my_sql_v2():
+def query_mysql_v2():
     mysql_hook = MySqlHook(mysql_conn_id="mysql")
     query = f"""
         SELECT 
