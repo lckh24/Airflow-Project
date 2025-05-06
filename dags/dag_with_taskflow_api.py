@@ -53,7 +53,7 @@ def hello_world_etl():
     task2 = query_mysql_v2()
     task3 = query_mysql_v2()
     task4 = query_mysql_v1()
-    [task1. task2, task3] >> task4
+    [task1, task2, task3] >> task4
 
 
 # Khởi tạo DAG
