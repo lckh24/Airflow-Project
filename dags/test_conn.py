@@ -11,20 +11,19 @@ def test_mysql_conn():
     
 
 def query_mysql():
-    try:
-        # Tạo kết nối MySQL và thực thi câu truy vấn
-        mysql_hook = MySqlHook(mysql_conn_id="mysql")
-        query = f"""SELECT geolocation_zip_code_prefix, COUNT(*) AS so_lan_xuat_hien
-                    FROM geolocation g 
-                    GROUP BY geolocation_zip_code_prefix 
-                    HAVING COUNT(*) > 1;"""
-        result = mysql_hook.get_records(query)
-        if result:
-            print(result)
-        else:
-            print("No records found.")
-    except Exception as e:
-        print(f"Error executing query: {str(e)}")
+    # Tạo kết nối MySQL và thực thi câu truy vấn
+    mysql_hook = MySqlHook(mysql_conn_id="mysql")
+    query = f"""SELECT geolocation_zip_code_prefix, COUNT(*) AS so_lan_xuat_hien
+                FROM geolocation g 
+                GROUP BY geolocation_zip_code_prefix 
+                HAVING COUNT(*) > 1
+                LIMIT 10;"""
+    result = mysql_hook.get_records(query)
+    if result:
+        print(result)
+    else:
+        print("No records found.")
+
     
     
 
