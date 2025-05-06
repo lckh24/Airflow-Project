@@ -41,6 +41,7 @@ with DAG("test_mysql_connection",
         task_id="query_mysql",
         python_callable=query_mysql
     )
-   task2
+    
+    task2
     
     
