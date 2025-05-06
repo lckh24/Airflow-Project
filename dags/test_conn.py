@@ -12,7 +12,7 @@ def test_mysql_conn():
 
 def query_mysql():
     # Tạo kết nối MySQL và thực thi câu truy vấn
-    mysql_hook = MySqlHook(mysql_conn_id="mysql_db")
+    mysql_hook = MySqlHook(mysql_conn_id="mysql")
     query = f"""SELECT geolocation_zip_code_prefix, COUNT(*) AS so_lan_xuat_hien
                 FROM geolocation g 
                 GROUP BY geolocation_zip_code_prefix 
