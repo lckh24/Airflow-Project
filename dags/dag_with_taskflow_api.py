@@ -1,38 +1,56 @@
 from airflow.decorators import dag, task
-from datetime import datetime, timedelta
+from airflow.providers.mysql.hooks.mysql import MySqlHook
+from datetime import datetime
 
 default_args = {
-    "owner": "khanhle",
-    "retries": 3,
-    "retry_delay": timedelta(minutes=5)
+    'owner': 'airflow',
+    'retries': 1
 }
 
-@dag(dag_id="dag_with_taskflow_api",
-     default_args=default_args,
-     start_date=datetime(2025,5,5),
-     schedule_interval='@daily')
-
+@dag(
+    dag_id="dag_with_taskflow_api",
+    default_args=default_args,
+    start_date=datetime(2025, 5, 5),
+    schedule_interval='@daily',
+    catchup=False
+)
 def hello_world_etl():
     
     @task(multiple_outputs=True)
-    def get_name():
-        return {
-            "first_name": "Jerry",
-            "last_name": "Hazel"
-        }
-    
+    def query_mysql_v1():
+        mysql_hook = MySqlHook(mysql_conn_id="mysql")
+        query = """
+            SELECT geolocation_zip_code_prefix, COUNT(*) AS so_lan_xuat_hien
+            FROM geolocation g 
+            GROUP BY geolocation_zip_code_prefix 
+            HAVING COUNT(*) > 1
+            LIMIT 10;
+        """
+        result = mysql_hook.get_records(query)
+        print(f"Query geolocation table: {result}")
+        return {"result": result}
+
     @task()
-    def get_age():
-        return 19
-    
-    @task()
-    def greet(first_name, last_name, age):
-        print(f"Hello World! My name is {first_name} {last_name} and i am {age} years old")
-        
-    name_dict = get_name()
-    age = get_age()
-    greet(first_name=name_dict['first_name'],
-          last_name=name_dict['last_name'],
-          age=age)
-    
+    def query_mysql_v2():
+        mysql_hook = MySqlHook(mysql_conn_id="mysql")
+        query = """
+            SELECT 
+                oi.order_id,
+                o.customer_id,
+                oi.product_id,
+                o.order_status,
+                oi.price
+            FROM order_items oi
+            LEFT JOIN orders o 
+            ON oi.order_id = o.order_id
+        """
+        result = mysql_hook.get_records(query)
+        print(f"Query order and order_item table: {result}")
+        return result
+
+    # Gọi các task
+    query_mysql_v1()
+    query_mysql_v2()
+
+# Khởi tạo DAG
 greet_dag = hello_world_etl()
