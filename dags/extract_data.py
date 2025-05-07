@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-from pandas as pd
+import pandas as pd
 from sqlalchemy import create_engine
 
 from plugins.mysql_operator import MySQLOperators
