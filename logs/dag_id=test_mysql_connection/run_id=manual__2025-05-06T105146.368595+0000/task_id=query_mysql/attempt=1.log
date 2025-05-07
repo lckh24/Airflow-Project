@@ -1,0 +1,46 @@
+[2025-05-06T10:51:47.373+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-06T10:51:47.443+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_mysql_connection.query_mysql manual__2025-05-06T10:51:46.368595+00:00 [queued]>
+[2025-05-06T10:51:47.462+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_mysql_connection.query_mysql manual__2025-05-06T10:51:46.368595+00:00 [queued]>
+[2025-05-06T10:51:47.469+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-06T10:51:47.530+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): query_mysql> on 2025-05-06 10:51:46.368595+00:00
+[2025-05-06T10:51:47.547+0000] {standard_task_runner.py:63} INFO - Started process 414 to run task
+[2025-05-06T10:51:47.552+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'test_mysql_connection', 'query_mysql', 'manual__2025-05-06T10:51:46.368595+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/test_conn.py', '--cfg-path', '/tmp/tmp6t41nr7w']
+[2025-05-06T10:51:47.555+0000] {standard_task_runner.py:91} INFO - Job 77: Subtask query_mysql
+[2025-05-06T10:51:47.628+0000] {task_command.py:426} INFO - Running <TaskInstance: test_mysql_connection.query_mysql manual__2025-05-06T10:51:46.368595+00:00 [running]> on host 80541840992b
+[2025-05-06T10:51:47.755+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_mysql_connection' AIRFLOW_CTX_TASK_ID='query_mysql' AIRFLOW_CTX_EXECUTION_DATE='2025-05-06T10:51:46.368595+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-06T10:51:46.368595+00:00'
+[2025-05-06T10:51:47.757+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-06T10:51:48.067+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-06T10:51:48.078+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_conn.py", line 21, in query_mysql
+    result = mysql_hook.get_records(query)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 303, in get_records
+    return self.run(sql=sql, parameters=parameters, handler=fetch_all_handler)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 431, in run
+    with self._create_autocommit_connection(autocommit) as conn:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/common/sql/hooks/sql.py", line 551, in _create_autocommit_connection
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/providers/mysql/hooks/mysql.py", line 188, in get_conn
+    conn = self.connection or self.get_connection(getattr(self, self.conn_name_attr))
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/hooks/base.py", line 83, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/connection.py", line 519, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `mysql` isn't defined
+[2025-05-06T10:51:48.089+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=test_mysql_connection, task_id=query_mysql, run_id=manual__2025-05-06T10:51:46.368595+00:00, execution_date=20250506T105146, start_date=20250506T105147, end_date=20250506T105148
+[2025-05-06T10:51:48.103+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 77 for task query_mysql (The conn_id `mysql` isn't defined; 414)
+[2025-05-06T10:51:48.121+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-05-06T10:51:48.141+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-06T10:51:48.144+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
