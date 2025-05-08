@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 import pandas as pd
 from sqlalchemy import create_engine
 
+import os 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.mysql_operator import MySQLOperators
 from plugins.postgresql_operator import PostgresOperators
 
