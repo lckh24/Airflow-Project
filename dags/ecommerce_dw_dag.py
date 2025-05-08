@@ -46,7 +46,14 @@ def transform_group():
 
 @task_group(group_id="load")
 def load_group():
-    PythonOperator(task_id="load_dim_customers", python_callable=load_to_warehouse)
+    PythonOperator(task_id="load_dim_customers", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_customers'})
+    PythonOperator(task_id="load_dim_products", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_products'})
+    PythonOperator(task_id="load_dim_sellers", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_sellers'})
+    PythonOperator(task_id="load_dim_geolocation", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_geolocation'})
+    PythonOperator(task_id="load_dim_dates", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_dates'})
+    PythonOperator(task_id="load_dim_payments", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_payments'})
+    PythonOperator(task_id="load_fact_orders", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_fact_orders'})
+    
     
     
 @dag(
