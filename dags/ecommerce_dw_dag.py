@@ -17,8 +17,6 @@ from transform_dim_payments import transform_dim_payments
 from transform_fact_orders import transform_fact_orders
 from extract_and_load_to_staging import extract_and_load_to_staging
 
-
-
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -44,7 +42,6 @@ def transform_group():
     PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
     PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
 
-# Nhóm load
 @task_group(group_id="load")
 def load_group():
     PythonOperator(task_id="transform_fact_orders", python_callable=transform_fact_orders)
