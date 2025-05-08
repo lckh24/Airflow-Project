@@ -1,8 +1,12 @@
 from airflow.providers.mysql.hooks.mysql import MySqlHook
-from support_processing import TemplateOperatorDB
 import logging
 from contextlib import closing
 import os
+import sys
+sys.path.append(os.path.dirname(__file__))
+from support_processing import TemplateOperatorDB
+
+
 
 class MySQLOperators:
     
