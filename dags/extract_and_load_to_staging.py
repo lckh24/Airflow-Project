@@ -13,7 +13,7 @@ from plugins.postgresql_operator import PostgresOperators
 def extract_and_load_to_staging(**kwargs):
     source_operator = MySQLOperators('mysql')
     staging_operator = PostgresOperators('postgres')
-    
+
     tables = {
         "product_category_name_translation",
         "geolocation",
@@ -32,4 +32,3 @@ def extract_and_load_to_staging(**kwargs):
         print(f"Extracted and saved {table} from MySQL to PostgreSQL staging")
         
         
-print(os.path.dirname(__file__))
