@@ -23165,3 +23165,399 @@ File Path                                           PID  Runtime      # DAGs    
 [2025-05-08T10:11:30.955+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
 [2025-05-08T10:11:31.033+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
 [2025-05-08T10:11:31.462+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-08T10:17:25.371+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-05-08T10:17:25.372+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-05-08T10:17:25.373+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-08T10:17:25.373+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-05-08T10:17:25.524+0000] {manager.py:740} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-08T10:17:25.699+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/dag_with_taskflow_api.py          183  0.08s             0           0
+/opt/airflow/dags/ecommerce_dw_dag.py               186  0.06s             0           0
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0
+/opt/airflow/dags/test.py                                                  0           0
+/opt/airflow/dags/test_conn.py                                             0           0
+================================================================================
+[2025-05-08T10:17:56.425+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          220  0.02s             1           0  0.49s           2025-05-08T10:17:26
+/opt/airflow/dags/test.py                                                  1           0  0.34s           2025-05-08T10:17:26
+/opt/airflow/dags/test_conn.py                                             1           0  0.26s           2025-05-08T10:17:26
+/opt/airflow/dags/ecommerce_dw_dag.py               223  0.01s             0           1  0.19s           2025-05-08T10:17:25
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:17:25
+================================================================================
+[2025-05-08T10:18:26.986+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          251  0.02s             1           0  0.19s           2025-05-08T10:17:56
+/opt/airflow/dags/test.py                                                  1           0  0.18s           2025-05-08T10:17:56
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.15s           2025-05-08T10:17:56
+/opt/airflow/dags/test_conn.py                                             1           0  0.14s           2025-05-08T10:17:56
+/opt/airflow/dags/ecommerce_dw_dag.py               254  0.01s             0           1  0.13s           2025-05-08T10:17:56
+================================================================================
+[2025-05-08T10:18:57.431+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          282  0.02s             1           0  0.16s           2025-05-08T10:18:27
+/opt/airflow/dags/test.py                                                  1           0  0.15s           2025-05-08T10:18:27
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:18:27
+/opt/airflow/dags/ecommerce_dw_dag.py               285  0.01s             0           1  0.12s           2025-05-08T10:18:27
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:18:27
+================================================================================
+[2025-05-08T10:19:28.010+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          313  0.02s             1           0  0.14s           2025-05-08T10:18:57
+/opt/airflow/dags/test.py                                                  1           0  0.13s           2025-05-08T10:18:57
+/opt/airflow/dags/test_conn.py                                             1           0  0.11s           2025-05-08T10:18:57
+/opt/airflow/dags/ecommerce_dw_dag.py               316  0.01s             0           1  0.10s           2025-05-08T10:18:57
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:18:57
+================================================================================
+[2025-05-08T10:19:58.461+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          344  0.02s             1           0  0.17s           2025-05-08T10:19:28
+/opt/airflow/dags/ecommerce_dw_dag.py               347  0.01s             0           1  0.13s           2025-05-08T10:19:28
+/opt/airflow/dags/test.py                                                  1           0  0.13s           2025-05-08T10:19:28
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:19:28
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:19:28
+================================================================================
+[2025-05-08T10:20:28.985+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          375  0.02s             1           0  0.17s           2025-05-08T10:19:58
+/opt/airflow/dags/test.py                                                  1           0  0.16s           2025-05-08T10:19:58
+/opt/airflow/dags/test_conn.py                                             1           0  0.14s           2025-05-08T10:19:58
+/opt/airflow/dags/ecommerce_dw_dag.py               378  0.01s             0           1  0.12s           2025-05-08T10:19:58
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:19:58
+================================================================================
+[2025-05-08T10:20:59.431+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.31s           2025-05-08T10:20:49
+/opt/airflow/dags/dag_with_taskflow_api.py          411  0.02s             1           0  0.16s           2025-05-08T10:20:29
+/opt/airflow/dags/test.py                                                  1           0  0.15s           2025-05-08T10:20:29
+/opt/airflow/dags/test_conn.py                                             1           0  0.14s           2025-05-08T10:20:29
+/opt/airflow/dags/extract_and_load_to_staging.py    414  0.01s             0           0  0.08s           2025-05-08T10:20:29
+================================================================================
+[2025-05-08T10:21:29.990+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                                                  1           0  0.28s           2025-05-08T10:20:59
+/opt/airflow/dags/dag_with_taskflow_api.py          442  0.02s             1           0  0.25s           2025-05-08T10:20:59
+/opt/airflow/dags/test_conn.py                                             1           0  0.21s           2025-05-08T10:20:59
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.18s           2025-05-08T10:21:20
+/opt/airflow/dags/extract_and_load_to_staging.py    445  0.01s             0           0  0.10s           2025-05-08T10:20:59
+================================================================================
+[2025-05-08T10:22:00.386+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.22s           2025-05-08T10:21:50
+/opt/airflow/dags/dag_with_taskflow_api.py          475  0.02s             1           0  0.15s           2025-05-08T10:21:30
+/opt/airflow/dags/test.py                                                  1           0  0.13s           2025-05-08T10:21:30
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:21:30
+/opt/airflow/dags/extract_and_load_to_staging.py    478  0.01s             0           0  0.08s           2025-05-08T10:21:30
+================================================================================
+[2025-05-08T10:22:25.698+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-05-08T10:22:25.858+0000] {manager.py:740} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-08T10:22:30.948+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:22:20
+/opt/airflow/dags/dag_with_taskflow_api.py          506  0.02s             1           0  0.16s           2025-05-08T10:22:00
+/opt/airflow/dags/test.py                                                  1           0  0.14s           2025-05-08T10:22:00
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:22:00
+/opt/airflow/dags/extract_and_load_to_staging.py    509  0.01s             0           0  0.08s           2025-05-08T10:22:00
+================================================================================
+[2025-05-08T10:23:01.335+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.15s           2025-05-08T10:22:51
+/opt/airflow/dags/dag_with_taskflow_api.py          537  0.02s             1           0  0.14s           2025-05-08T10:22:31
+/opt/airflow/dags/test.py                                                  1           0  0.13s           2025-05-08T10:22:31
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:22:31
+/opt/airflow/dags/extract_and_load_to_staging.py    540  0.01s             0           0  0.07s           2025-05-08T10:22:31
+================================================================================
+[2025-05-08T10:23:31.803+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:23:21
+/opt/airflow/dags/test.py                           576  0.01s             1           0  0.15s           2025-05-08T10:23:01
+/opt/airflow/dags/dag_with_taskflow_api.py          573  0.02s             1           0  0.14s           2025-05-08T10:23:01
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:23:01
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:23:16
+================================================================================
+[2025-05-08T10:24:02.210+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                           607  0.01s             1           0  0.18s           2025-05-08T10:23:31
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.18s           2025-05-08T10:23:52
+/opt/airflow/dags/dag_with_taskflow_api.py          604  0.03s             1           0  0.17s           2025-05-08T10:23:31
+/opt/airflow/dags/test_conn.py                                             1           0  0.17s           2025-05-08T10:23:32
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:23:47
+================================================================================
+[2025-05-08T10:24:32.605+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                           638  0.01s             1           0  0.17s           2025-05-08T10:24:02
+/opt/airflow/dags/dag_with_taskflow_api.py          635  0.02s             1           0  0.16s           2025-05-08T10:24:02
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.16s           2025-05-08T10:24:22
+/opt/airflow/dags/test_conn.py                                             1           0  0.14s           2025-05-08T10:24:02
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:24:17
+================================================================================
+[2025-05-08T10:25:02.777+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:24:52
+/opt/airflow/dags/test.py                           669  0.00s             1           0  0.14s           2025-05-08T10:24:32
+/opt/airflow/dags/dag_with_taskflow_api.py          666  0.02s             1           0  0.14s           2025-05-08T10:24:32
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:24:47
+/opt/airflow/dags/test_conn.py                                             1           0  -0.05s          2025-05-08T10:24:32
+================================================================================
+[2025-05-08T10:25:33.141+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:25:23
+/opt/airflow/dags/test.py                           700  0.01s             1           0  0.14s           2025-05-08T10:25:02
+/opt/airflow/dags/dag_with_taskflow_api.py          697  0.02s             1           0  0.14s           2025-05-08T10:25:02
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:25:03
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:25:18
+================================================================================
+[2025-05-08T10:26:03.485+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:25:53
+/opt/airflow/dags/test.py                           731  0.00s             1           0  0.15s           2025-05-08T10:25:33
+/opt/airflow/dags/dag_with_taskflow_api.py          728  0.02s             1           0  0.14s           2025-05-08T10:25:33
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:25:33
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:25:48
+================================================================================
+[2025-05-08T10:26:33.843+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:26:23
+/opt/airflow/dags/test.py                           762  0.01s             1           0  0.15s           2025-05-08T10:26:03
+/opt/airflow/dags/dag_with_taskflow_api.py          759  0.02s             1           0  0.14s           2025-05-08T10:26:03
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:26:03
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:26:18
+================================================================================
+[2025-05-08T10:27:04.205+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.18s           2025-05-08T10:26:54
+/opt/airflow/dags/test.py                           793  0.01s             1           0  0.15s           2025-05-08T10:26:33
+/opt/airflow/dags/dag_with_taskflow_api.py          790  0.02s             1           0  0.15s           2025-05-08T10:26:33
+/opt/airflow/dags/test_conn.py                                             1           0  0.15s           2025-05-08T10:26:34
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:26:49
+================================================================================
+[2025-05-08T10:27:25.817+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-05-08T10:27:25.959+0000] {manager.py:740} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-08T10:27:34.621+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                           824  0.01s             1           0  0.18s           2025-05-08T10:27:04
+/opt/airflow/dags/dag_with_taskflow_api.py          821  0.02s             1           0  0.18s           2025-05-08T10:27:04
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:27:24
+/opt/airflow/dags/test_conn.py                                             1           0  0.11s           2025-05-08T10:27:04
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:27:19
+================================================================================
+[2025-05-08T10:28:05.014+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.30s           2025-05-08T10:27:55
+/opt/airflow/dags/test.py                           855  0.01s             1           0  0.14s           2025-05-08T10:27:34
+/opt/airflow/dags/dag_with_taskflow_api.py          852  0.02s             1           0  0.14s           2025-05-08T10:27:34
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:27:34
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.10s           2025-05-08T10:27:49
+================================================================================
+[2025-05-08T10:28:35.502+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.22s           2025-05-08T10:28:21
+/opt/airflow/dags/test.py                           888  0.01s             1           0  0.15s           2025-05-08T10:28:05
+/opt/airflow/dags/dag_with_taskflow_api.py          885  0.02s             1           0  0.15s           2025-05-08T10:28:05
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.15s           2025-05-08T10:28:20
+/opt/airflow/dags/test_conn.py                                             1           0  0.15s           2025-05-08T10:28:05
+================================================================================
+[2025-05-08T10:29:05.930+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_taskflow_api.py          916  0.02s             1           0  0.19s           2025-05-08T10:28:35
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.18s           2025-05-08T10:28:52
+/opt/airflow/dags/test.py                           919  0.01s             1           0  0.17s           2025-05-08T10:28:35
+/opt/airflow/dags/test_conn.py                                             1           0  0.14s           2025-05-08T10:28:35
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:28:50
+================================================================================
+[2025-05-08T10:29:36.273+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:29:22
+/opt/airflow/dags/test.py                           952  0.00s             1           0  0.13s           2025-05-08T10:29:06
+/opt/airflow/dags/dag_with_taskflow_api.py          949  0.02s             1           0  0.13s           2025-05-08T10:29:06
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:29:06
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.09s           2025-05-08T10:29:21
+================================================================================
+[2025-05-08T10:30:06.658+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:29:52
+/opt/airflow/dags/dag_with_taskflow_api.py          980  0.02s             1           0  0.15s           2025-05-08T10:29:36
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:29:36
+/opt/airflow/dags/test.py                           983  0.01s             1           0  0.12s           2025-05-08T10:29:36
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.09s           2025-05-08T10:29:51
+================================================================================
+[2025-05-08T10:30:37.057+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                          1014  0.01s             1           0  0.18s           2025-05-08T10:30:06
+/opt/airflow/dags/dag_with_taskflow_api.py         1011  0.02s             1           0  0.17s           2025-05-08T10:30:06
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.16s           2025-05-08T10:30:23
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:30:06
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:30:22
+================================================================================
+[2025-05-08T10:31:07.481+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/test.py                          1045  0.01s             1           0  0.19s           2025-05-08T10:30:37
+/opt/airflow/dags/dag_with_taskflow_api.py         1042  0.02s             1           0  0.18s           2025-05-08T10:30:37
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.16s           2025-05-08T10:30:53
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:30:37
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:30:52
+================================================================================
+[2025-05-08T10:31:37.814+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.18s           2025-05-08T10:31:23
+/opt/airflow/dags/test.py                          1076  0.01s             1           0  0.15s           2025-05-08T10:31:07
+/opt/airflow/dags/dag_with_taskflow_api.py         1073  0.02s             1           0  0.15s           2025-05-08T10:31:07
+/opt/airflow/dags/test_conn.py                                             1           0  0.13s           2025-05-08T10:31:07
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:31:22
+================================================================================
+[2025-05-08T10:32:08.168+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.15s           2025-05-08T10:31:54
+/opt/airflow/dags/test.py                          1107  0.01s             1           0  0.14s           2025-05-08T10:31:37
+/opt/airflow/dags/dag_with_taskflow_api.py         1104  0.02s             1           0  0.14s           2025-05-08T10:31:37
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:31:38
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.08s           2025-05-08T10:31:53
+================================================================================
+[2025-05-08T10:32:26.516+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-05-08T10:32:26.671+0000] {manager.py:740} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-08T10:32:38.685+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.17s           2025-05-08T10:32:24
+/opt/airflow/dags/test.py                          1138  0.01s             1           0  0.13s           2025-05-08T10:32:08
+/opt/airflow/dags/dag_with_taskflow_api.py         1135  0.02s             1           0  0.13s           2025-05-08T10:32:08
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:32:08
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:32:23
+================================================================================
+[2025-05-08T10:33:08.625+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ecommerce_dw_dag.py                                      1           0  0.15s           2025-05-08T10:32:55
+/opt/airflow/dags/dag_with_taskflow_api.py                                 1           0  0.15s           2025-05-08T10:32:38
+/opt/airflow/dags/test.py                                                  1           0  0.14s           2025-05-08T10:32:38
+/opt/airflow/dags/test_conn.py                                             1           0  0.12s           2025-05-08T10:32:38
+/opt/airflow/dags/extract_and_load_to_staging.py                           0           0  0.07s           2025-05-08T10:32:54
+================================================================================
+[2025-05-08T10:33:32.427+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
