@@ -1,0 +1,146 @@
+[2025-05-08T09:57:08.261+0000] {processor.py:161} INFO - Started process (PID=5097) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:08.262+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:57:08.263+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:57:08.262+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:08.296+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:08.312+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.058 seconds
+[2025-05-08T09:57:38.794+0000] {processor.py:161} INFO - Started process (PID=5133) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:38.795+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:57:38.796+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:57:38.796+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:38.832+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:57:38.853+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.067 seconds
+[2025-05-08T09:58:09.409+0000] {processor.py:161} INFO - Started process (PID=5169) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:09.410+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:58:09.411+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:58:09.411+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:09.434+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:09.449+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.048 seconds
+[2025-05-08T09:58:39.793+0000] {processor.py:161} INFO - Started process (PID=5205) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:39.794+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:58:39.795+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:58:39.795+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:39.823+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:58:39.841+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.054 seconds
+[2025-05-08T09:59:10.321+0000] {processor.py:161} INFO - Started process (PID=5241) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:10.322+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:59:10.322+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:59:10.322+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:10.351+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:10.369+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.055 seconds
+[2025-05-08T09:59:40.846+0000] {processor.py:161} INFO - Started process (PID=5279) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:40.848+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T09:59:40.848+0000] {logging_mixin.py:188} INFO - [2025-05-08T09:59:40.848+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:40.872+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T09:59:40.884+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.043 seconds
+[2025-05-08T10:00:11.254+0000] {processor.py:161} INFO - Started process (PID=5315) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:11.255+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:00:11.255+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:00:11.255+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:11.279+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:11.291+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.043 seconds
+[2025-05-08T10:00:41.728+0000] {processor.py:161} INFO - Started process (PID=5351) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:41.730+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:00:41.731+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:00:41.730+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:41.756+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:00:41.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.048 seconds
+[2025-05-08T10:01:12.181+0000] {processor.py:161} INFO - Started process (PID=5387) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:12.182+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:01:12.183+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:01:12.183+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:12.207+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:12.220+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.044 seconds
+[2025-05-08T10:01:42.542+0000] {processor.py:161} INFO - Started process (PID=5423) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:42.544+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:01:42.545+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:01:42.545+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:42.572+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:01:42.590+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.057 seconds
+[2025-05-08T10:02:13.362+0000] {processor.py:161} INFO - Started process (PID=5459) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:13.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:02:13.364+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:02:13.364+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:13.391+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:13.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.049 seconds
+[2025-05-08T10:02:43.980+0000] {processor.py:161} INFO - Started process (PID=5495) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:43.981+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:02:43.983+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:02:43.982+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:44.007+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:02:44.019+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.045 seconds
+[2025-05-08T10:03:14.435+0000] {processor.py:161} INFO - Started process (PID=5531) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:14.436+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:03:14.437+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:03:14.437+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:14.462+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:14.475+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.046 seconds
+[2025-05-08T10:03:44.943+0000] {processor.py:161} INFO - Started process (PID=5567) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:44.945+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:03:44.947+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:03:44.946+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:44.974+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:03:44.995+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.062 seconds
+[2025-05-08T10:04:15.349+0000] {processor.py:161} INFO - Started process (PID=5603) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:15.350+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:04:15.352+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:04:15.351+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:15.374+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:15.388+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.044 seconds
+[2025-05-08T10:04:45.778+0000] {processor.py:161} INFO - Started process (PID=5639) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:45.779+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:04:45.780+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:04:45.780+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:45.805+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:04:45.816+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.044 seconds
+[2025-05-08T10:05:16.304+0000] {processor.py:161} INFO - Started process (PID=5675) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:16.305+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:05:16.306+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:05:16.305+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:16.332+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:16.346+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.049 seconds
+[2025-05-08T10:05:46.750+0000] {processor.py:161} INFO - Started process (PID=5711) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:46.751+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:05:46.752+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:05:46.752+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:46.777+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:05:46.792+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.049 seconds
+[2025-05-08T10:06:17.162+0000] {processor.py:161} INFO - Started process (PID=5747) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:17.163+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:06:17.164+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:06:17.164+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:17.186+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:17.199+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.042 seconds
+[2025-05-08T10:06:47.595+0000] {processor.py:161} INFO - Started process (PID=5783) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:47.596+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:06:47.597+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:06:47.597+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:47.624+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:06:47.637+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.048 seconds
+[2025-05-08T10:07:18.133+0000] {processor.py:161} INFO - Started process (PID=5819) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:18.134+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:07:18.135+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:07:18.134+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:18.158+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:18.171+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.045 seconds
+[2025-05-08T10:07:48.667+0000] {processor.py:161} INFO - Started process (PID=5855) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:48.668+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:07:48.669+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:07:48.669+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:48.692+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:07:48.706+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.045 seconds
+[2025-05-08T10:08:19.202+0000] {processor.py:161} INFO - Started process (PID=5891) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:19.203+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:08:19.204+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:08:19.204+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:19.233+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:19.251+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.057 seconds
+[2025-05-08T10:08:49.705+0000] {processor.py:161} INFO - Started process (PID=5927) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:49.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:08:49.707+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:08:49.707+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:49.733+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:08:49.746+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.046 seconds
+[2025-05-08T10:09:20.292+0000] {processor.py:161} INFO - Started process (PID=5963) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:20.293+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:09:20.294+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:09:20.293+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:20.316+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:20.329+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.043 seconds
+[2025-05-08T10:09:50.739+0000] {processor.py:161} INFO - Started process (PID=5999) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:50.740+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:09:50.741+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:09:50.741+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:50.765+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:09:50.778+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.047 seconds
+[2025-05-08T10:10:21.268+0000] {processor.py:161} INFO - Started process (PID=6035) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:21.269+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:10:21.270+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:10:21.269+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:21.293+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:21.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.044 seconds
+[2025-05-08T10:10:51.676+0000] {processor.py:161} INFO - Started process (PID=6071) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:51.677+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:10:51.678+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:10:51.678+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:51.702+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:10:51.715+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.045 seconds
+[2025-05-08T10:11:22.120+0000] {processor.py:161} INFO - Started process (PID=6107) to work on /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:11:22.122+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/extract_and_load_to_staging.py for tasks to queue
+[2025-05-08T10:11:22.124+0000] {logging_mixin.py:188} INFO - [2025-05-08T10:11:22.124+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:11:22.183+0000] {logging_mixin.py:188} INFO - /opt/airflow/dags
+[2025-05-08T10:11:22.183+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/extract_and_load_to_staging.py
+[2025-05-08T10:11:22.198+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/extract_and_load_to_staging.py took 0.089 seconds
