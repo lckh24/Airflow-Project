@@ -15,8 +15,13 @@ class PostgresOperators:
         return self.hook.get_pandas_df(sql)
     
     def save_dataframe_to_postgres(self, df, table_name, schema='public', if_exists='replace'):
+        
         conn = self.hook.get_uri()
         engine = create_engine(conn)
+        
+        with engine.connect() as connection:
+            connection.execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
+            
         df.to_sql(table_name,
                   engine,
                   schema=schema,
