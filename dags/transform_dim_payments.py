@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.postgresql_operator import PostgresOperators
 
-def transform_dim_payment():
+def transform_dim_payments():
     staging_operator = PostgresOperators("postgres")
     warehouse_operator = PostgresOperators("postgres")
     
