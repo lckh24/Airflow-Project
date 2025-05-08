@@ -28,11 +28,14 @@ def transform_dim_customers():
     
     df['customer_key'] = df.index + 1
     
-    warehouse_operator.save_dataframe_to_postgres(
-        df,
-        'dim_customer',
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_dataframe_to_postgres(
+    #     df,
+    #     'dim_customer',
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_customer_{execution_date}.parquet', index=False)
+
     print("Transformed and saved data to dim_customers")

@@ -1,5 +1,6 @@
 import os
 import sys
+from datetime import datetime
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.postgresql_operator import PostgresOperators
 
@@ -15,12 +16,14 @@ def transform_dim_payments():
     df['payment_key'] = df.index + 1
     df = df.drop_duplicates(subset=['payment_type', 'payment_installments'])
     
-    warehouse_operator.save_data_to_postgres(
-        df,
-        "dim_payments",
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_data_to_postgres(
+    #     df,
+    #     "dim_payments",
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_payments_{execution_date}.parquet', index=False)
     print("Transformed and loaded data to dim_payments")
     

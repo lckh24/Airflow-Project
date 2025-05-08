@@ -1,6 +1,7 @@
 import pandas as pd 
 import os 
 import sys
+from datetime import datetime
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.mysql_operator import MySQLOperators
 from plugins.postgresql_operator import PostgresOperators
@@ -25,12 +26,14 @@ def transform_dim_dates():
         'is_weekend': date_range.day_of_week.isin([5,6])
     })
     
-    warehouse_operator.save_dataframe_to_postgres(
-        df,
-        'dim_dates',
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_dataframe_to_postgres(
+    #     df,
+    #     'dim_dates',
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_dates_{execution_date}.parquet', index=False)
     print("Created and saved data to dim_dates")
     

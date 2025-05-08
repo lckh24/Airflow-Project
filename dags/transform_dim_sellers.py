@@ -3,6 +3,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.postgresql_operator import PostgresOperators
 import pandas as pd 
+from datetime import datetime
 
 def transform_dim_sellers():
     staging_operator = PostgresOperators('postgres')
@@ -18,11 +19,13 @@ def transform_dim_sellers():
     # SCD Type 1
     df['last_updated'] = pd.Timestamp.now().date()
     
-    warehouse_operator.save_dataframe_to_postgres(
-        df,
-        'dim_sellers',
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_dataframe_to_postgres(
+    #     df,
+    #     'dim_sellers',
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_sellers_{execution_date}.parquet', index=False)
     print("Transformed and saved data to dim_sellers")

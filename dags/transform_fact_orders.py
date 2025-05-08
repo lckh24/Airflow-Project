@@ -1,4 +1,5 @@
 import pandas as pd 
+from datetime import datetime
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -51,11 +52,13 @@ def transform_fact_orders():
     
     df_fact = df[fact_columns]
     
-    warehouse_operator.save_data_to_postgres(
-        df_fact,
-        'fact_orders',
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_data_to_postgres(
+    #     df_fact,
+    #     'fact_orders',
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_orders_{execution_date}.parquet', index=False)
     print("Transformed and saved data to fact_orders")
