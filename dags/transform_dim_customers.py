@@ -36,6 +36,6 @@ def transform_dim_customers():
     # )
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
-    df.to_parquet(f'/tmp/dim_customer_{execution_date}.parquet', index=False)
+    df.to_parquet(f'/tmp/dim_customers_{execution_date}.parquet', index=False)
 
     print("Transformed and saved data to dim_customers")
