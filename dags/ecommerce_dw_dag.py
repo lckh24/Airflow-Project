@@ -40,7 +40,7 @@ def transform_group():
     PythonOperator(task_id="transform_dim_sellers", python_callable=transform_dim_sellers)
     PythonOperator(task_id="transform_dim_geolocation", python_callable=transform_dim_geolocation)
     PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
-    PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
+    # PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
 
 @task_group(group_id="load")
 def load_group():
