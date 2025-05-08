@@ -13,7 +13,7 @@ from transform_dim_products import transform_dim_products
 from transform_dim_sellers import transform_dim_sellers
 from transform_dim_geolocation import transform_dim_geolocation
 from transform_dim_dates import transform_dim_dates
-from transform_dim_payments import transform_dim_payments
+# from transform_dim_payments import transform_dim_payments
 from transform_fact_orders import transform_fact_orders
 from extract_and_load_to_staging import extract_and_load_to_staging
 
