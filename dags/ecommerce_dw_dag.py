@@ -52,7 +52,7 @@ def load_group():
     PythonOperator(task_id="load_dim_geolocation", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_geolocation'})
     PythonOperator(task_id="load_dim_dates", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_dates'})
     PythonOperator(task_id="load_dim_payments", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_payments'})
-    PythonOperator(task_id="load_fact_orders", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_fact_orders'})
+    PythonOperator(task_id="load_fact_orders", python_callable=load_to_warehouse, op_kwargs={'table_name': 'fact_orders'})
     
     
     
