@@ -1,0 +1,33 @@
+[2025-05-08T15:11:43.930+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-08T15:11:43.984+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T15:10:54.446886+00:00 [queued]>
+[2025-05-08T15:11:43.996+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T15:10:54.446886+00:00 [queued]>
+[2025-05-08T15:11:43.997+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-08T15:11:44.017+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_fact_orders> on 2025-05-08 15:10:54.446886+00:00
+[2025-05-08T15:11:44.030+0000] {standard_task_runner.py:63} INFO - Started process 11681 to run task
+[2025-05-08T15:11:44.038+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'e_commerce_dw_etl_decorator', 'transform.transform_fact_orders', 'manual__2025-05-08T15:10:54.446886+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_dw_dag.py', '--cfg-path', '/tmp/tmp0tv4rzca']
+[2025-05-08T15:11:44.043+0000] {standard_task_runner.py:91} INFO - Job 133: Subtask transform.transform_fact_orders
+[2025-05-08T15:11:44.136+0000] {task_command.py:426} INFO - Running <TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T15:10:54.446886+00:00 [running]> on host ebff8b55cad8
+[2025-05-08T15:11:44.288+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='e_commerce_dw_etl_decorator' AIRFLOW_CTX_TASK_ID='transform.transform_fact_orders' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T15:10:54.446886+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T15:10:54.446886+00:00'
+[2025-05-08T15:11:44.291+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-08T15:11:44.307+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:11:44.327+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T15:11:44.943+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:11:44.950+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T15:11:45.477+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:11:45.483+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T15:11:45.758+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:11:45.764+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T15:11:46.629+0000] {logging_mixin.py:188} INFO - The columns of dataframe after merged: Index(['order_id', 'customer_id', 'order_status', 'order_purchase_timestamp',
+       'order_approved_at', 'order_delivered_carrier_date',
+       'order_delivered_customer_date', 'order_estimated_delivery_date',
+       'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date',
+       'price', 'freight_value', 'payment_sequential', 'payment_type',
+       'payment_installments', 'payment_value', 'customer_zip_code_prefix'],
+      dtype='object')
+[2025-05-08T15:11:47.611+0000] {logging_mixin.py:188} INFO - Transformed and saved data to fact_orders
+[2025-05-08T15:11:47.695+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-05-08T15:11:47.696+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-08T15:11:47.707+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=e_commerce_dw_etl_decorator, task_id=transform.transform_fact_orders, run_id=manual__2025-05-08T15:10:54.446886+00:00, execution_date=20250508T151054, start_date=20250508T151143, end_date=20250508T151147
+[2025-05-08T15:11:47.761+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-08T15:11:47.799+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T15:11:47.803+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

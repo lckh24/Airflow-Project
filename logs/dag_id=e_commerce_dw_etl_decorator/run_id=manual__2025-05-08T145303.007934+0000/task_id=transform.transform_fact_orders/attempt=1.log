@@ -1,0 +1,62 @@
+[2025-05-08T14:54:03.726+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-08T14:54:03.774+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T14:53:03.007934+00:00 [queued]>
+[2025-05-08T14:54:03.787+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T14:53:03.007934+00:00 [queued]>
+[2025-05-08T14:54:03.788+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-08T14:54:03.808+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform.transform_fact_orders> on 2025-05-08 14:53:03.007934+00:00
+[2025-05-08T14:54:03.821+0000] {standard_task_runner.py:63} INFO - Started process 10452 to run task
+[2025-05-08T14:54:03.826+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'e_commerce_dw_etl_decorator', 'transform.transform_fact_orders', 'manual__2025-05-08T14:53:03.007934+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_dw_dag.py', '--cfg-path', '/tmp/tmp869tvzcx']
+[2025-05-08T14:54:03.836+0000] {standard_task_runner.py:91} INFO - Job 108: Subtask transform.transform_fact_orders
+[2025-05-08T14:54:03.948+0000] {task_command.py:426} INFO - Running <TaskInstance: e_commerce_dw_etl_decorator.transform.transform_fact_orders manual__2025-05-08T14:53:03.007934+00:00 [running]> on host ebff8b55cad8
+[2025-05-08T14:54:04.123+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='e_commerce_dw_etl_decorator' AIRFLOW_CTX_TASK_ID='transform.transform_fact_orders' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T14:53:03.007934+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T14:53:03.007934+00:00'
+[2025-05-08T14:54:04.127+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-08T14:54:04.144+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T14:54:04.170+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T14:54:04.903+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T14:54:04.912+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T14:54:05.441+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T14:54:05.448+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T14:54:05.729+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T14:54:05.736+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/providers/common/sql/hooks/sql.py:263 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-05-08T14:54:06.555+0000] {logging_mixin.py:188} INFO - The columns of dataframe after merged: Index(['order_id', 'customer_id', 'order_status', 'order_purchase_timestamp',
+       'order_approved_at', 'order_delivered_carrier_date',
+       'order_delivered_customer_date', 'order_estimated_delivery_date',
+       'order_item_id', 'product_id', 'seller_id', 'shipping_limit_date',
+       'price', 'freight_value', 'payment_sequential', 'payment_type',
+       'payment_installments', 'payment_value', 'customer_zip_code_prefix'],
+      dtype='object')
+[2025-05-08T14:54:06.917+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-08T14:54:06.919+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'payment_key'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/transform_fact_orders.py", line 46, in transform_fact_orders
+    df['payment_key'] = df['payment_key'].astype('category').cat.codes + 1
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 3807, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'payment_key'
+[2025-05-08T14:54:06.954+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=e_commerce_dw_etl_decorator, task_id=transform.transform_fact_orders, run_id=manual__2025-05-08T14:53:03.007934+00:00, execution_date=20250508T145303, start_date=20250508T145403, end_date=20250508T145406
+[2025-05-08T14:54:06.972+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 108 for task transform.transform_fact_orders ('payment_key'; 10452)
+[2025-05-08T14:54:07.024+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-05-08T14:54:07.058+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T14:54:07.066+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

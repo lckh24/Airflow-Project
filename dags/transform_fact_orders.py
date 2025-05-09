@@ -1,4 +1,5 @@
 import pandas as pd 
+from datetime import datetime
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -42,7 +43,7 @@ def transform_fact_orders():
         print("Column customer_zip_code_prefix not exists. Using default values.")
         df['geolocation_key'] = 'unknown'
     
-    df['payment_key'] = df['payment_key'].astype('category').cat.codes + 1
+    df['payment_key'] = df['payment_type'].astype('category').cat.codes + 1
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
     fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'payment_key', 'order_date_key',
@@ -51,11 +52,13 @@ def transform_fact_orders():
     
     df_fact = df[fact_columns]
     
-    warehouse_operator.save_data_to_postgres(
-        df_fact,
-        'fact_orders',
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator.save_data_to_postgres(
+    #     df_fact,
+    #     'fact_orders',
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/fact_orders_{execution_date}.parquet', index=False)
     print("Transformed and saved data to fact_orders")

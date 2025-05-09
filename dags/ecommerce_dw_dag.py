@@ -13,9 +13,10 @@ from transform_dim_products import transform_dim_products
 from transform_dim_sellers import transform_dim_sellers
 from transform_dim_geolocation import transform_dim_geolocation
 from transform_dim_dates import transform_dim_dates
-# from transform_dim_payments import transform_dim_payments
+from transform_dim_payments import transform_dim_payments
 from transform_fact_orders import transform_fact_orders
 from extract_and_load_to_staging import extract_and_load_to_staging
+from load_to_warehouse import load_to_warehouse
 
 default_args = {
     'owner': 'airflow',
@@ -40,11 +41,20 @@ def transform_group():
     PythonOperator(task_id="transform_dim_sellers", python_callable=transform_dim_sellers)
     PythonOperator(task_id="transform_dim_geolocation", python_callable=transform_dim_geolocation)
     PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
-    # PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
+    PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
+    PythonOperator(task_id="transform_fact_orders", python_callable=transform_fact_orders)
 
 @task_group(group_id="load")
 def load_group():
-    PythonOperator(task_id="transform_fact_orders", python_callable=transform_fact_orders)
+    PythonOperator(task_id="load_dim_customers", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_customers'})
+    PythonOperator(task_id="load_dim_products", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_products'})
+    PythonOperator(task_id="load_dim_sellers", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_sellers'})
+    PythonOperator(task_id="load_dim_geolocation", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_geolocation'})
+    PythonOperator(task_id="load_dim_dates", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_dates'})
+    PythonOperator(task_id="load_dim_payments", python_callable=load_to_warehouse, op_kwargs={'table_name': 'dim_payments'})
+    PythonOperator(task_id="load_fact_orders", python_callable=load_to_warehouse, op_kwargs={'table_name': 'fact_orders'})
+    
+    
     
 @dag(
     dag_id="e_commerce_dw_etl_decorator",
@@ -56,9 +66,8 @@ def load_group():
 )
 def etl_pipeline():
     extract = extract_group()
-    # transform = transform_group()
-    # load = load_group()
-# >> transform >> load
-
-    extract 
+    transform = transform_group()
+    load = load_group()
+    extract >> transform >> load
+    
 dag = etl_pipeline()

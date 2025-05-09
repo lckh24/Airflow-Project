@@ -1,0 +1,20 @@
+[2025-05-08T15:18:21.164+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-08T15:18:21.210+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_fact_orders manual__2025-05-08T15:17:25.111912+00:00 [queued]>
+[2025-05-08T15:18:21.232+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_fact_orders manual__2025-05-08T15:17:25.111912+00:00 [queued]>
+[2025-05-08T15:18:21.234+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-08T15:18:21.274+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load.load_fact_orders> on 2025-05-08 15:17:25.111912+00:00
+[2025-05-08T15:18:21.285+0000] {standard_task_runner.py:63} INFO - Started process 12231 to run task
+[2025-05-08T15:18:21.296+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'e_commerce_dw_etl_decorator', 'load.load_fact_orders', 'manual__2025-05-08T15:17:25.111912+00:00', '--job-id', '156', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_dw_dag.py', '--cfg-path', '/tmp/tmpavo105p1']
+[2025-05-08T15:18:21.304+0000] {standard_task_runner.py:91} INFO - Job 156: Subtask load.load_fact_orders
+[2025-05-08T15:18:21.394+0000] {task_command.py:426} INFO - Running <TaskInstance: e_commerce_dw_etl_decorator.load.load_fact_orders manual__2025-05-08T15:17:25.111912+00:00 [running]> on host ebff8b55cad8
+[2025-05-08T15:18:21.523+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='e_commerce_dw_etl_decorator' AIRFLOW_CTX_TASK_ID='load.load_fact_orders' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T15:17:25.111912+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T15:17:25.111912+00:00'
+[2025-05-08T15:18:21.525+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-08T15:18:21.528+0000] {logging_mixin.py:188} INFO - Loading latest file: /tmp/fact_orders_08May2025.parquet
+[2025-05-08T15:18:22.189+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:18:43.500+0000] {logging_mixin.py:188} INFO - Loaded data to fact_orders successfully.
+[2025-05-08T15:18:42.410+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-05-08T15:18:42.412+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-08T15:18:42.423+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=e_commerce_dw_etl_decorator, task_id=load.load_fact_orders, run_id=manual__2025-05-08T15:17:25.111912+00:00, execution_date=20250508T151725, start_date=20250508T151821, end_date=20250508T151842
+[2025-05-08T15:18:42.507+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-08T15:18:42.524+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T15:18:42.527+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

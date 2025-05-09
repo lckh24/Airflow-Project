@@ -1,0 +1,69 @@
+[2025-05-08T14:59:41.944+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-08T14:59:42.016+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_payments manual__2025-05-08T14:58:40.551626+00:00 [queued]>
+[2025-05-08T14:59:42.053+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_payments manual__2025-05-08T14:58:40.551626+00:00 [queued]>
+[2025-05-08T14:59:42.054+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-08T14:59:42.135+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load.load_dim_payments> on 2025-05-08 14:58:40.551626+00:00
+[2025-05-08T14:59:42.152+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'e_commerce_dw_etl_decorator', 'load.load_dim_payments', 'manual__2025-05-08T14:58:40.551626+00:00', '--job-id', '127', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_dw_dag.py', '--cfg-path', '/tmp/tmp6izvj9ij']
+[2025-05-08T14:59:42.155+0000] {standard_task_runner.py:63} INFO - Started process 10872 to run task
+[2025-05-08T14:59:42.157+0000] {standard_task_runner.py:91} INFO - Job 127: Subtask load.load_dim_payments
+[2025-05-08T14:59:42.319+0000] {task_command.py:426} INFO - Running <TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_payments manual__2025-05-08T14:58:40.551626+00:00 [running]> on host ebff8b55cad8
+[2025-05-08T14:59:42.533+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='e_commerce_dw_etl_decorator' AIRFLOW_CTX_TASK_ID='load.load_dim_payments' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T14:58:40.551626+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T14:58:40.551626+00:00'
+[2025-05-08T14:59:42.535+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-08T14:59:42.538+0000] {logging_mixin.py:188} INFO - Loading latest file: /tmp/dim_payments_08May2025.parquet
+[2025-05-08T14:59:42.753+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T14:59:42.786+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-08T14:59:42.787+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+DETAIL:  Key (nspname)=(warehouse) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/load_to_warehouse.py", line 22, in load_to_warehouse
+    warehouse_operator.save_dataframe_to_postgres(
+  File "/opt/airflow/plugins/postgresql_operator.py", line 23, in save_dataframe_to_postgres
+    connection.execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1370, in execute
+    return self._exec_driver_sql(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1674, in _exec_driver_sql
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "pg_namespace_nspname_index"
+DETAIL:  Key (nspname)=(warehouse) already exists.
+
+[SQL: CREATE SCHEMA IF NOT EXISTS warehouse]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2025-05-08T14:59:42.829+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=e_commerce_dw_etl_decorator, task_id=load.load_dim_payments, run_id=manual__2025-05-08T14:58:40.551626+00:00, execution_date=20250508T145840, start_date=20250508T145942, end_date=20250508T145942
+[2025-05-08T14:59:42.851+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 127 for task load.load_dim_payments ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "pg_namespace_nspname_index"
+DETAIL:  Key (nspname)=(warehouse) already exists.
+
+[SQL: CREATE SCHEMA IF NOT EXISTS warehouse]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 10872)
+[2025-05-08T14:59:42.914+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-05-08T14:59:42.963+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T14:59:42.968+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

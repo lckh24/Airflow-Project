@@ -1,0 +1,19 @@
+[2025-05-08T15:18:21.164+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-05-08T15:18:21.208+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_customers manual__2025-05-08T15:17:25.111912+00:00 [queued]>
+[2025-05-08T15:18:21.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_customers manual__2025-05-08T15:17:25.111912+00:00 [queued]>
+[2025-05-08T15:18:21.239+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-05-08T15:18:21.278+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load.load_dim_customers> on 2025-05-08 15:17:25.111912+00:00
+[2025-05-08T15:18:21.291+0000] {standard_task_runner.py:63} INFO - Started process 12232 to run task
+[2025-05-08T15:18:21.301+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'e_commerce_dw_etl_decorator', 'load.load_dim_customers', 'manual__2025-05-08T15:17:25.111912+00:00', '--job-id', '155', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_dw_dag.py', '--cfg-path', '/tmp/tmp0fsj80mr']
+[2025-05-08T15:18:21.306+0000] {standard_task_runner.py:91} INFO - Job 155: Subtask load.load_dim_customers
+[2025-05-08T15:18:21.396+0000] {task_command.py:426} INFO - Running <TaskInstance: e_commerce_dw_etl_decorator.load.load_dim_customers manual__2025-05-08T15:17:25.111912+00:00 [running]> on host ebff8b55cad8
+[2025-05-08T15:18:21.529+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='e_commerce_dw_etl_decorator' AIRFLOW_CTX_TASK_ID='load.load_dim_customers' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T15:17:25.111912+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T15:17:25.111912+00:00'
+[2025-05-08T15:18:21.530+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-05-08T15:18:21.532+0000] {logging_mixin.py:188} INFO - Loading latest file: /tmp/dim_customers_08May2025.parquet
+[2025-05-08T15:18:21.890+0000] {base.py:84} INFO - Using connection ID 'postgres' for task execution.
+[2025-05-08T15:18:27.660+0000] {logging_mixin.py:188} INFO - Loaded data to dim_customers successfully.
+[2025-05-08T15:18:27.672+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-05-08T15:18:27.674+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-05-08T15:18:27.692+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=e_commerce_dw_etl_decorator, task_id=load.load_dim_customers, run_id=manual__2025-05-08T15:17:25.111912+00:00, execution_date=20250508T151725, start_date=20250508T151821, end_date=20250508T151827
+[2025-05-08T15:18:27.733+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-05-08T15:18:27.749+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

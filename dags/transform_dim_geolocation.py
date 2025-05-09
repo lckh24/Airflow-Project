@@ -1,6 +1,7 @@
 import pandas as pd 
 import os 
 import sys
+from datetime import datetime
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.mysql_operator import MySQLOperators
 from plugins.postgresql_operator import PostgresOperators
@@ -20,11 +21,13 @@ def transform_dim_geolocation():
     # surrogate key
     df['geolocation_key'] = df.index + 1
     
-    warehouse_operator = warehouse_operator.save_dataframe_to_postgres(
-        df,
-        "dim_geolocation",
-        schema='warehouse',
-        if_exists='replace'
-    )
-    
+    # warehouse_operator = warehouse_operator.save_dataframe_to_postgres(
+    #     df,
+    #     "dim_geolocation",
+    #     schema='warehouse',
+    #     if_exists='replace'
+    # )
+    date = datetime.now()
+    execution_date = date.strftime("%d%b%Y")
+    df.to_parquet(f'/tmp/dim_geolocation_{execution_date}.parquet', index=False)
     print("Transformed and saved data to dim_geolocation")
