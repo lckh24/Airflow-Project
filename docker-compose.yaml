@@ -254,6 +254,8 @@ services:
     hostname: de_psql
     volumes:
       - postgres_data_h:/var/lib/postgresql/data
+      - ./pg_hba.conf:/tmp/pg_hba.conf
+    command: ["postgres", "-c", "hba_file=/tmp/pg_hba.conf"]
     expose:
       - "5433"
     ports:
