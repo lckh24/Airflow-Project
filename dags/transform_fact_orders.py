@@ -12,9 +12,11 @@ def transform_fact_orders():
     df_orders = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
     df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
+    df_order_reviews = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_reviews")
     df_customers = staging_operator.get_data_to_pd("SELECT customer_id, customer_zip_code_prefix FROM staging.stg_customers")
     
     df = pd.merge(df_orders, df_order_items, on='order_id', how='left')
+    df = pd.merge(df, df_order_reviews, on='order_id', how='left')
     df = pd.merge(df, df_order_payments, on='order_id', how='left')
     df = pd.merge(df, df_customers, on='customer_id', how='left')
     
@@ -48,7 +50,7 @@ def transform_fact_orders():
     
     fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'payment_key', 'order_date_key',
                     'order_status', 'price', 'freight_value', 'total_amount', 'payment_value',
-                    'delivery_time', 'estimated_delivery_time']   
+                    'delivery_time', 'estimated_delivery_time', "review_score"]   
     
     df_fact = df[fact_columns]
     
