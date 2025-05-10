@@ -13,7 +13,6 @@ def transform_dim_payments():
     
     df['payment_type'] = df['payment_type'].str.lower()
     df['payment_installments'] = df['payment_installments'].fillna(1).astype(int)
-    df['payment_key'] = df.index + 1
     
     # warehouse_operator.save_data_to_postgres(
     #     df,
