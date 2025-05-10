@@ -48,7 +48,7 @@ def transform_fact_orders():
     # df['payment_key'] = df['payment_key']
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
-    fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'payment_key', 'order_date_key',
+    fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'order_date_key',
                     'order_status', 'price', 'freight_value', 'total_amount', 'payment_value',
                     'delivery_time', 'estimated_delivery_time', "review_score"]   
     
