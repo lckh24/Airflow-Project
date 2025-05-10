@@ -45,7 +45,7 @@ def transform_fact_orders():
         print("Column customer_zip_code_prefix not exists. Using default values.")
         df['geolocation_key'] = 'unknown'
     
-    df['payment_key'] = df['payment_key']
+    # df['payment_key'] = df['payment_key']
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
     fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'payment_key', 'order_date_key',
