@@ -21,6 +21,7 @@ def transform_fact_orders():
     df = pd.merge(df, df_customers, on='customer_id', how='left')
     
     print(f"The columns of dataframe after merged: {df.columns}")
+    print(f"Shape of the dataframe: {df.shape}")
     
     df['order_status'] = df['order_status'].str.lower()
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
