@@ -10,21 +10,20 @@ def transform_fact_orders():
     warehouse_operator = PostgresOperators('postgres')
     
     df_orders = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
-    print(f"Shape of the dataframe: {df_orders.shape}")
     df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
-    print(f"Shape of the dataframe order items: {df_order_items.shape}")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
-    print(f"Shape of the dataframe order payments: {df_order_payments.shape}")
     df_order_reviews = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_reviews")
-    print(f"Shape of the dataframe order reviews: {df_order_reviews.shape}")
     df_customers = staging_operator.get_data_to_pd("SELECT customer_id, customer_zip_code_prefix FROM staging.stg_customers")
-    print(f"Shape of the dataframe customers: {df_customers.shape}")
 
     
     df = pd.merge(df_orders, df_order_items, on='order_id', how='left')
+    print(f"Shape of the dataframe join order with order items: {df.shape}")
     df = pd.merge(df, df_order_reviews, on='order_id', how='left')
+    print(f"Shape of the dataframe join order with order items with reviews : {df.shape}")
     df = pd.merge(df, df_order_payments, on='order_id', how='left')
+    print(f"Shape of the dataframe join order with order items with reviews with order payments : {df.shape}")
     df = pd.merge(df, df_customers, on='customer_id', how='left')
+    print(f"Shape of the dataframe join order with order items with reviews with order payments with customers : {df.shape}")
     
     print(f"The columns of dataframe after merged: {df.columns}")
     print(f"Shape of the dataframe: {df.shape}")
