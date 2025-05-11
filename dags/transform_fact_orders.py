@@ -14,11 +14,11 @@ def transform_fact_orders():
     df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
     print(f"Shape of the dataframe order items: {df_order_items.shape}")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
-    print(f"Shape of the dataframe order payments: {df_order_items.shape}")
+    print(f"Shape of the dataframe order payments: {df_order_payments.shape}")
     df_order_reviews = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_reviews")
-    print(f"Shape of the dataframe order reviews: {df_order_items.shape}")
+    print(f"Shape of the dataframe order reviews: {df_order_reviews.shape}")
     df_customers = staging_operator.get_data_to_pd("SELECT customer_id, customer_zip_code_prefix FROM staging.stg_customers")
-    print(f"Shape of the dataframe customers: {df_order_items.shape}")
+    print(f"Shape of the dataframe customers: {df_customers.shape}")
 
     
     df = pd.merge(df_orders, df_order_items, on='order_id', how='left')
