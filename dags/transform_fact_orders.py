@@ -10,6 +10,7 @@ def transform_fact_orders():
     warehouse_operator = PostgresOperators('postgres')
     
     df_orders = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
+    print(f"Shape of the dataframe: {df.shape}")
     df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
     df_order_reviews = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_reviews")
