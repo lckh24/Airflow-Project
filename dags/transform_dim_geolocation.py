@@ -17,16 +17,14 @@ def transform_dim_geolocation():
     df['geolocation_city'] = df['geolocation_city'].str.title()
     df['geolocation_state'] = df['geolocation_state'].str.upper()
     df = df.drop_duplicates(subset=['geolocation_zip_code_prefix'])
-    
-    # surrogate key
-    df['geolocation_key'] = df.index + 1
-    
+    columns_to_keep = ['id', 'geolocation_zip_code_prefix', 'geolocation_lat', 'geolocation_long', 'geolocation_city', 'geolocation_state']
     # warehouse_operator = warehouse_operator.save_dataframe_to_postgres(
     #     df,
     #     "dim_geolocation",
     #     schema='warehouse',
     #     if_exists='replace'
     # )
+    df = df[columns_to_keep]
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_geolocation_{execution_date}.parquet', index=False)

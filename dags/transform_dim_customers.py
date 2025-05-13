@@ -18,22 +18,6 @@ def transform_dim_customers():
     df['customer_city'] = df['customer_city'].str.title()
     df['customer_state'] = df['customer_state'].str.upper()
     
-    # Thêm cột để theo dõi thay đổi (SCD Type 2)
-    current_date = datetime.now().date()
-    future_date = current_date + timedelta(days=365*10)
-    
-    df['effective_date'] = current_date
-    df['end_date'] = future_date
-    df['is_current'] = True
-    
-    df['customer_key'] = df.index + 1
-    
-    # warehouse_operator.save_dataframe_to_postgres(
-    #     df,
-    #     'dim_customer',
-    #     schema='warehouse',
-    #     if_exists='replace'
-    # )
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_customers_{execution_date}.parquet', index=False)

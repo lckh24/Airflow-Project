@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd
 from datetime import datetime
 import os
 import sys
@@ -6,62 +6,48 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from plugins.postgresql_operator import PostgresOperators
 
 def transform_fact_orders():
+    # Khởi tạo operator kết nối PostgreSQL
     staging_operator = PostgresOperators('postgres')
     warehouse_operator = PostgresOperators('postgres')
     
-    df_orders = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
-    df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
+    # Lấy dữ liệu từ các bảng staging
+    df = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
+    df_customer = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_customers")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
-    df_order_reviews = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_reviews")
-    df_customers = staging_operator.get_data_to_pd("SELECT customer_id, customer_zip_code_prefix FROM staging.stg_customers")
     
-    df = pd.merge(df_orders, df_order_items, on='order_id', how='left')
-    df = pd.merge(df, df_order_reviews, on='order_id', how='left')
-    df = pd.merge(df, df_order_payments, on='order_id', how='left')
-    df = pd.merge(df, df_customers, on='customer_id', how='left')
+    # Kết nối df_orders với df_customers dựa trên customer_id
+    df = df.merge(df_customer, on='customer_id', how='left')
     
-    print(f"The columns of dataframe after merged: {df.columns}")
-    print(f"Shape of the dataframe: {df.shape}")
+    # Đổi tên các cột trùng tên (id_x, id_y) sau khi merge
+    df.rename(columns={"id_x": "id", "id_y": "fk_customer_id"}, inplace=True)
     
-    df['order_status'] = df['order_status'].str.lower()
+    # Tính tổng payment_value và số payment_installments lớn nhất cho mỗi order_id
+    order_payments_agg = df_order_payments.groupby('order_id').agg({
+        'payment_value': 'sum',
+        'payment_installments': 'max',
+    }).reset_index()
+    
+    # Kết hợp dữ liệu thanh toán vào bảng df
+    df = df.merge(order_payments_agg, left_on='order_id', right_on='order_id', how='left')
+    
+    # Tính toán delivery_time theo số ngày từ khi mua đến khi giao hàng cho khách hàng
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
-    df['order_approved_at'] = pd.to_datetime(df['order_approved_at'])
-    df['order_delivered_carrier_date'] = pd.to_datetime(df['order_delivered_carrier_date'])
     df['order_delivered_customer_date'] = pd.to_datetime(df['order_delivered_customer_date'])
-    df['order_estimated_delivery_date'] = pd.to_datetime(df['order_estimated_delivery_date'])
     
-    # calculate metrics
-    df['total_amount'] = df['price'] + df['freight_value']
+    # Tính toán thời gian giao hàng (delivery_time) và thời gian theo ngày (order_date_key)
     df['delivery_time'] = (df['order_delivered_customer_date'] - df['order_purchase_timestamp']).dt.total_seconds() / 86400
-    df['estimated_delivery_time'] = (df['order_estimated_delivery_date'] - df['order_purchase_timestamp']).dt.total_seconds() / 86400
-    
-    # define foreign key
-    df['customer_key'] = df['customer_id']
-    df['product_key'] = df['product_id']
-    df['seller_key'] = df['seller_id']
-    
-    if 'customer_zip_code_prefix' in df.columns:
-        df['geolocation_key'] = df['customer_zip_code_prefix']
-    else:
-        print("Column customer_zip_code_prefix not exists. Using default values.")
-        df['geolocation_key'] = 'unknown'
-    
-    # df['payment_key'] = df['payment_key']
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
-    fact_columns = ['order_id', 'customer_key', 'product_key', 'seller_key', 'geolocation_key', 'order_date_key',
-                    'order_status', 'price', 'freight_value', 'total_amount', 'payment_value',
-                    'delivery_time', 'estimated_delivery_time', "review_score"]   
-    
+    # Chọn các cột cần thiết cho bảng fact
+    fact_columns = ['id', 'order_id', 'payment_value', 'delivery_time', 'order_date_key', 'fk_customer_id']
     df_fact = df[fact_columns]
     
-    # warehouse_operator.save_data_to_postgres(
-    #     df_fact,
-    #     'fact_orders',
-    #     schema='warehouse',
-    #     if_exists='replace'
-    # )
+    # Lưu kết quả dưới dạng file parquet
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
-    df_fact.to_parquet(f'/tmp/fact_orders_{execution_date}.parquet', index=False)
-    print("Transformed and saved data to fact_orders")
+    file_path = f'/tmp/fact_orders_{execution_date}.parquet'
+    df_fact.to_parquet(file_path, index=False)
+    
+    print(f"Transformed and saved data to {file_path}")
+    
+transform_fact_orders()
