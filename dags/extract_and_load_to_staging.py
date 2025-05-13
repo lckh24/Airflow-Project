@@ -27,6 +27,7 @@ def extract_and_load_to_staging(**kwargs):
     }
     
     for table in tables:
+        print(f"Extract for {table}")
         df = source_operator.get_data_to_pd(f"SELECT * FROM {table}")
         staging_operator.save_dataframe_to_postgres(df, f"stg_{table}", schema="staging", if_exists="replace")
         print(f"Extracted and saved {table} from MySQL to PostgreSQL staging")
