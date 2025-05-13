@@ -70,8 +70,8 @@ def load_group():
 )
 def etl_pipeline():
     extract = extract_group()
-    transform = transform_group()
-    load = load_group()
-    extract >> transform >> load
+    # transform = transform_group()
+    # load = load_group()
+    extract 
     
 dag = etl_pipeline()
