@@ -8,7 +8,7 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-# from transform_dim_customers import transform_dim_customers
+from transform_dim_customers import transform_dim_customers
 
 # from transform_dim_products import transform_dim_products
 # from transform_dim_sellers import transform_dim_sellers
