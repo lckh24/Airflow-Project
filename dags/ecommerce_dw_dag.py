@@ -12,13 +12,13 @@ from transform_dim_customers import transform_dim_customers
 
 # from transform_dim_products import transform_dim_products
 # from transform_dim_sellers import transform_dim_sellers
-# from transform_dim_order_items import transform_dim_order_items
-# from transform_dim_geolocation import transform_dim_geolocation
-# from transform_dim_dates import transform_dim_dates
-# from transform_dim_payments import transform_dim_payments
-# from transform_fact_orders import transform_fact_orders
+from transform_dim_order_items import transform_dim_order_items
+from transform_dim_geolocation import transform_dim_geolocation
+from transform_dim_dates import transform_dim_dates
+from transform_dim_payments import transform_dim_payments
+from transform_fact_orders import transform_fact_orders
 from extract_and_load_to_staging import extract_and_load_to_staging
-# from load_to_warehouse import load_to_warehouse
+from load_to_warehouse import load_to_warehouse
 
 default_args = {
     'owner': 'airflow',
