@@ -20,6 +20,8 @@ def transform_dim_payments():
     #     schema='warehouse',
     #     if_exists='replace'
     # )
+    df['payment_key'] = df.index + 1
+    df_columns = ['payment_key', 'payment_installments', 'payment_type', 'fk_order_id']
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_payments_{execution_date}.parquet', index=False)

@@ -70,3 +70,5 @@ def transform_fact_orders():
     execution_date = date.strftime("%d%b%Y")
     df_fact.to_parquet(f'/tmp/fact_orders_{execution_date}.parquet', index=False)
     print("Transformed and saved data to fact_orders")
+    
+transform_fact_orders()

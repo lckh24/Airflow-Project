@@ -18,7 +18,7 @@ def transform_dim_sellers():
     df['seller_key'] = df.index + 1
     # SCD Type 1
     df['last_updated'] = pd.Timestamp.now().date()
-    
+    df.rename(columns={'seller_id': 'used_id'}, inplace=True)
     # warehouse_operator.save_dataframe_to_postgres(
     #     df,
     #     'dim_sellers',

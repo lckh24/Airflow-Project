@@ -21,6 +21,7 @@ def transform_dim_geolocation():
     # surrogate key
     df['geolocation_key'] = df.index + 1
     
+    df.rename(columns={'geolocation_zip_code_prefix': 'used_id'}, inplace=True)
     # warehouse_operator = warehouse_operator.save_dataframe_to_postgres(
     #     df,
     #     "dim_geolocation",

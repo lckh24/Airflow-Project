@@ -22,12 +22,8 @@ def transform_dim_customers():
     current_date = datetime.now().date()
     future_date = current_date + timedelta(days=365*10)
     
-    df['effective_date'] = current_date
-    df['end_date'] = future_date
-    df['is_current'] = True
-    
-    df['customer_key'] = df.index + 1
-    
+    df['creation_date'] = current_date
+    df.rename(columns={'customer_unique_id': 'used_id'}, inplace=True)
     # warehouse_operator.save_dataframe_to_postgres(
     #     df,
     #     'dim_customer',
