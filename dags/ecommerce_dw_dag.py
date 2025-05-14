@@ -13,6 +13,7 @@ from transform_dim_customers import transform_dim_customers
 # from transform_dim_products import transform_dim_products
 # from transform_dim_sellers import transform_dim_sellers
 from transform_dim_order_items import transform_dim_order_items
+from transform_dim_order_reviews import transform_dim_order_reviews
 from transform_dim_geolocation import transform_dim_geolocation
 from transform_dim_dates import transform_dim_dates
 from transform_dim_payments import transform_dim_payments
@@ -41,6 +42,7 @@ def transform_group():
     PythonOperator(task_id="transform_dim_customers", python_callable=transform_dim_customers)
     # PythonOperator(task_id="transform_dim_products", python_callable=transform_dim_products)
     # PythonOperator(task_id="transform_dim_sellers", python_callable=transform_dim_sellers)
+    PythonOperator(task_id="transform_dim_order_reviews", python_callable=transform_dim_order_reviews)
     PythonOperator(task_id="transform_dim_order_items", python_callable=transform_dim_order_items)
     PythonOperator(task_id="transform_dim_geolocation", python_callable=transform_dim_geolocation)
     PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
