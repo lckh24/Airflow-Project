@@ -10,6 +10,7 @@ def transform_dim_payments():
     
     query_to_get_payment_table = f"SELECT * FROM staging.stg_payments"
     df = staging_operator.get_data_to_pd(query_to_get_payment_table)
+    df_orders = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_orders")
     
     df['payment_type'] = df['payment_type'].str.lower()
     df['payment_installments'] = df['payment_installments'].fillna(1).astype(int)
@@ -20,7 +21,13 @@ def transform_dim_payments():
     #     schema='warehouse',
     #     if_exists='replace'
     # )
-    columns_to_keep = ["id", "order_id", "payment_installments", "payment_type"]
+    
+    df = df.merge(df_orders, on='order_id', how='left')
+    df.rename(columns={'id_x': 'id',
+                       'id_y': 'fk_order_id',
+                       'order_id_x': 'order_id'}, inplace=True)    
+    
+    columns_to_keep = ["id", "fk_order_id", "payment_installments", "payment_type"]
     df = df[columns_to_keep]
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
