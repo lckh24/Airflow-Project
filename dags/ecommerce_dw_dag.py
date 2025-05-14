@@ -36,16 +36,16 @@ def extract_group():
         provide_context=True,
     )
 
-# @task_group(group_id="transform")
-# def transform_group():
-#     PythonOperator(task_id="transform_dim_customers", python_callable=transform_dim_customers)
-#     # PythonOperator(task_id="transform_dim_products", python_callable=transform_dim_products)
-#     # PythonOperator(task_id="transform_dim_sellers", python_callable=transform_dim_sellers)
-#     PythonOperator(task_id="transform_dim_order_items", python_callable=transform_dim_order_items)
-#     PythonOperator(task_id="transform_dim_geolocation", python_callable=transform_dim_geolocation)
-#     PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
-#     PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
-#     PythonOperator(task_id="transform_fact_orders", python_callable=transform_fact_orders)
+@task_group(group_id="transform")
+def transform_group():
+    PythonOperator(task_id="transform_dim_customers", python_callable=transform_dim_customers)
+    # PythonOperator(task_id="transform_dim_products", python_callable=transform_dim_products)
+    # PythonOperator(task_id="transform_dim_sellers", python_callable=transform_dim_sellers)
+    PythonOperator(task_id="transform_dim_order_items", python_callable=transform_dim_order_items)
+    PythonOperator(task_id="transform_dim_geolocation", python_callable=transform_dim_geolocation)
+    PythonOperator(task_id="transform_dim_dates", python_callable=transform_dim_dates)
+    PythonOperator(task_id="transform_dim_payments", python_callable=transform_dim_payments)
+    PythonOperator(task_id="transform_fact_orders", python_callable=transform_fact_orders)
 
 # @task_group(group_id="load")
 # def load_group():
@@ -70,8 +70,9 @@ def extract_group():
 )
 def etl_pipeline():
     extract = extract_group()
-    # transform = transform_group()
+    transform = transform_group()
     # load = load_group()
-    extract 
+    # extract 
+    transform
     
 dag = etl_pipeline()
