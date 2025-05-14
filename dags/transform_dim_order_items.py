@@ -17,7 +17,8 @@ def transform_dim_order_items():
     df.rename(columns={'id_x': 'id',
                    'id_y': 'fk_product_id'}, inplace=True)
     df = df.merge(df_categories, on='product_category_name', how='left')
-    df.rename(columns={'id': 'fk_product_category_name_id'}, inplace=True)                   
+    df.rename(columns={'id_y': 'fk_product_category_name_id',
+                       'id_x': 'id'}, inplace=True)                   
     df['product_category_name_english'] = df['product_category_name_english'].fillna("Unknown")
     df_columns = ['id',
                   'fk_product_id',

@@ -69,7 +69,7 @@ def transform_group():
     tags=["etl", "ecommerce"]
 )
 def etl_pipeline():
-    extract = extract_group()
+    # extract = extract_group()
     transform = transform_group()
     # load = load_group()
     # extract 

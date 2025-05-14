@@ -17,7 +17,7 @@ def transform_dim_geolocation():
     df['geolocation_city'] = df['geolocation_city'].str.title()
     df['geolocation_state'] = df['geolocation_state'].str.upper()
     df = df.drop_duplicates(subset=['geolocation_zip_code_prefix'])
-    columns_to_keep = ['id', 'geolocation_zip_code_prefix', 'geolocation_lat', 'geolocation_long', 'geolocation_city', 'geolocation_state']
+    columns_to_keep = ['id', 'geolocation_zip_code_prefix', 'geolocation_lat', 'geolocation_lng', 'geolocation_city', 'geolocation_state']
     # warehouse_operator = warehouse_operator.save_dataframe_to_postgres(
     #     df,
     #     "dim_geolocation",
