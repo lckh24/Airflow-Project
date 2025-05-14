@@ -29,6 +29,7 @@ def transform_dim_payments():
     
     columns_to_keep = ["id", "fk_order_id", "payment_installments", "payment_type"]
     df = df[columns_to_keep]
+    print(df.columns)
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_payments_{execution_date}.parquet', index=False)
