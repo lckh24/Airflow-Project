@@ -27,7 +27,7 @@ def transform_dim_order_items():
     df['product_category_name_english'] = df['product_category_name_english'].fillna("Unknown")
     df_columns = ['id',
                   'fk_product_id',
-                  'fk_order_id'
+                  'fk_order_id',
                   'product_category_name_english',
                   'order_item_id',
                   'price',
