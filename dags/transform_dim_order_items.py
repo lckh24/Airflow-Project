@@ -13,7 +13,7 @@ def transform_dim_order_items():
     df_order_items = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_order_items")
     df_products = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_products")
     df_categories = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_product_category_name_translation")
-    df_orders = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_orders")[['id', 'order_id']] 
+    df_orders = staging_operator.get_data_to_pd(f"SELECT * FROM staging.stg_orders")[['id', 'order_id','order_status']] 
     df = df_order_items.merge(df_products,on='product_id',how='left')
     df.rename(columns={'id_x': 'id',
                    'id_y': 'fk_product_id'}, inplace=True)
