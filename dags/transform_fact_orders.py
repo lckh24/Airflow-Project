@@ -41,7 +41,7 @@ def transform_fact_orders():
     df['delivery_time'] = (df['order_delivered_customer_date'] - df['order_purchase_timestamp']).dt.total_seconds() / 86400
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
-    fact_columns = ['id', 'order_id','order_status', 'payment_value', 'total_amount' 'delivery_time', 'order_date_key', 'fk_customer_id']
+    fact_columns = ['id', 'order_id','order_status', 'payment_value', 'total_amount', 'delivery_time', 'order_date_key', 'fk_customer_id']
     df_fact = df[fact_columns]
 
     date = datetime.now()
