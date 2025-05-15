@@ -30,6 +30,7 @@ def transform_dim_order_items():
                   'fk_order_id',
                   'product_category_name_english',
                   'order_item_id',
+                  'order_status',
                   'price',
                   'freight_value'
                  ]

@@ -11,6 +11,7 @@ def transform_fact_orders():
     
     df = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_orders")
     df_customer = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_customers")
+    df_order_items = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_order_items")
     df_order_payments = staging_operator.get_data_to_pd("SELECT * FROM staging.stg_payments")
     
     df = df.merge(df_customer, on='customer_id', how='left')
@@ -24,6 +25,15 @@ def transform_fact_orders():
     
     df = df.merge(order_payments_agg, left_on='order_id', right_on='order_id', how='left')
     
+    order_items_agg = df_order_items.groupby(['order_id']).agg({
+        'price': 'sum',
+        'freight_value': 'sum'
+    }).reset_index().rename(columns={
+        'price': 'total_price',
+        'freight_value': 'total_freight'
+    })
+    order_items_agg['total_amount'] = order_items_agg['total_price'] + order_items_agg['total_freight']
+    df = df.merge(order_items_agg, left_on='order_id', right_on='order_id', how='left')
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
     df['order_delivered_customer_date'] = pd.to_datetime(df['order_delivered_customer_date'])
     
@@ -31,7 +41,7 @@ def transform_fact_orders():
     df['delivery_time'] = (df['order_delivered_customer_date'] - df['order_purchase_timestamp']).dt.total_seconds() / 86400
     df['order_date_key'] = df['order_purchase_timestamp'].dt.date
     
-    fact_columns = ['id', 'order_id', 'payment_value', 'delivery_time', 'order_date_key', 'fk_customer_id']
+    fact_columns = ['id', 'order_id','order_status', 'payment_value', 'total_amount' 'delivery_time', 'order_date_key', 'fk_customer_id']
     df_fact = df[fact_columns]
 
     date = datetime.now()
