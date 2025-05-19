@@ -21,8 +21,14 @@ To create the Data Warehouse schema, we will execute the following pipeline stag
  1. Create MySQL database, load data from csv to database.   
  2. Extract data from MySQL to staging stage in Postgres.  
  3. Clean and Transform the data in staging stage.  
- 4. Load data to Warehouse stage in Postgres.  
-![image](https://github.com/user-attachments/assets/54ddca2e-1d2f-49ae-968d-13a939c28fe4)
+ 4. Load data to Warehouse stage in Postgres.
+
+![image](https://github.com/user-attachments/assets/54ddca2e-1d2f-49ae-968d-13a939c28fe4)  
+
+I also integrated git-sync with Apache Airflow to automate DAG deployments directly from a Git repository. This setup ensures that any updates to the pipeline code are automatically synchronized with the Airflow DAGs folder, streamlining development and deployment across environments.  
+
+![image](https://github.com/user-attachments/assets/d07bf9ee-34c0-4621-9cc9-032811e622a3)
+
 
 ## **Visualizations**:
 ![image](https://github.com/user-attachments/assets/bc8078b3-9f92-4ab8-b6f2-b140169dfd54)  
