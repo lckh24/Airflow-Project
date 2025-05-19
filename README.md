@@ -18,10 +18,10 @@ We have the order_fact table as our Fact table and it dimensional tables:
 
 ## **The ETL pipeline**:  
 To create the Data Warehouse schema, we will execute the following pipeline stages:  
- - 1. Create MySQL database, load data from csv to database.   
- - 2. Extract data from MySQL to staging stage in Postgres.  
- - 3. Clean and Transform the data in staging stage.  
- - 4. Load data to Warehouse stage in Postgres.  
+ 1. Create MySQL database, load data from csv to database.   
+ 2. Extract data from MySQL to staging stage in Postgres.  
+ 3. Clean and Transform the data in staging stage.  
+ 4. Load data to Warehouse stage in Postgres.  
 ![image](https://github.com/user-attachments/assets/54ddca2e-1d2f-49ae-968d-13a939c28fe4)
 
 ## **Visualizations**:
