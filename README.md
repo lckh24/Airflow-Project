@@ -29,6 +29,9 @@ I also integrated git-sync with Apache Airflow to automate DAG deployments direc
 
 ![image](https://github.com/user-attachments/assets/d07bf9ee-34c0-4621-9cc9-032811e622a3)
 
+## **Snapshot DAGs process**:  
+![image](https://github.com/user-attachments/assets/146f639c-e331-4aa0-8673-60fffc7584fb)
+
 
 ## **Visualizations**:
 ![image](https://github.com/user-attachments/assets/bc8078b3-9f92-4ab8-b6f2-b140169dfd54)  
