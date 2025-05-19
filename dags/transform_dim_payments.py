@@ -33,5 +33,5 @@ def transform_dim_payments():
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_payments_{execution_date}.parquet', index=False)
-    print("Transformed and loaded data to dim_payments")
+    print("Transformed and loaded data to dim_payments") 
     

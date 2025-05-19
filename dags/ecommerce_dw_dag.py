@@ -29,13 +29,13 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-# @task_group(group_id="extract")
-# def extract_group():
-#     return PythonOperator(
-#         task_id="extract_and_load_to_staging",
-#         python_callable=extract_and_load_to_staging,
-#         provide_context=True,
-#     )
+@task_group(group_id="extract")
+def extract_group():
+    return PythonOperator(
+        task_id="extract_and_load_to_staging",
+        python_callable=extract_and_load_to_staging,
+        provide_context=True,
+    )
 
 @task_group(group_id="transform")
 def transform_group():
@@ -71,10 +71,10 @@ def load_group():
     tags=["etl", "ecommerce"]
 )
 def etl_pipeline():
-    # extract = extract_group()
+    extract = extract_group()
     transform = transform_group()
     load = load_group()
-    # extract 
+    extract 
     transform >> load
     
 dag = etl_pipeline()

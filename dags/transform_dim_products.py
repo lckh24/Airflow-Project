@@ -35,6 +35,6 @@
 #     date = datetime.now()
 #     execution_date = date.strftime("%d%b%Y")
 #     df.to_parquet(f'/tmp/dim_products_{execution_date}.parquet', index=False)
-#     print("Transformed and Saved data to dim_products")
+#     print("Transformed and Saved data to dim_products") 
     
     

@@ -28,4 +28,4 @@ def transform_dim_geolocation():
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_geolocation_{execution_date}.parquet', index=False)
-    print("Transformed and saved data to dim_geolocation")
+    print("Transformed and saved data to dim_geolocation") 

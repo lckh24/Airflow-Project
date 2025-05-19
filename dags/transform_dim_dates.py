@@ -26,5 +26,5 @@ def transform_dim_dates():
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_dates_{execution_date}.parquet', index=False)
-    print("Created and saved data to dim_dates")
+    print("Created and saved data to dim_dates") 
     

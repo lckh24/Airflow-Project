@@ -23,5 +23,5 @@ def transform_dim_order_reviews():
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_reviews_{execution_date}.parquet', index=False)
-    print("Transformed and saved data to dim_order_reviews")
+    print("Transformed and saved data to dim_order_reviews") 
     

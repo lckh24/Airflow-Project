@@ -38,4 +38,4 @@ def transform_dim_order_items():
     date = datetime.now()
     execution_date = date.strftime("%d%b%Y")
     df.to_parquet(f'/tmp/dim_order_items_{execution_date}.parquet', index=False)
-    print("Transformed and loaded data to dim_order_items")
+    print("Transformed and loaded data to dim_order_items") 

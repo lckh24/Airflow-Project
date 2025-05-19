@@ -23,4 +23,4 @@ def load_to_warehouse(table_name):
         df, table_name, schema='warehouse', if_exists='replace'
     )
     
-    print(f"Loaded data to {table_name} successfully.")
+    print(f"Loaded data to {table_name} successfully.") 
