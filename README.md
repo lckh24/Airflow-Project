@@ -17,14 +17,17 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
 - **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
 - **Scope**: Focus on the latest dataset only; historization of data is not required.
+
 ---
 ## **About the company**:
 Olist is an e-commerce company based in São Paulo, Brazil. It serves as a centralized platform that connects numerous small businesses with customers who want to purchase their products.  
 ---
+
 ## **About the dataset**:  
 The dataset is publicly available and contains information on over 100,000 orders placed between 2016 and 2018 across multiple marketplaces in Brazil. It is hosted on Kaggle: [](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
 ![image](https://github.com/user-attachments/assets/f72cd1a5-7044-4f28-93a2-070390c4e8e7)
 ---
+
 ## **Data Warehouse schema:**  
 We have the order_fact table as our Fact table and it dimensional tables:  
 ![image](https://github.com/user-attachments/assets/fed0756b-8c94-4de2-961e-b057e4bd2c67)  
