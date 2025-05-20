@@ -1,69 +1,88 @@
----
-# **Olist-E-commerce-Data-Analysis**
-![image](https://github.com/user-attachments/assets/f90a074e-020a-4ba8-baa4-e24f104abf35)
----
-## **Summary**:
+# 🚀 Olist E-commerce Data Pipeline & Analysis
 
-#### In this project, i built a data warehouse using a sales dataset from Olist, a Brazilian e-commerce platform. I designed and implemented a complete ETL pipeline orchestrated by Apache Airflow, with data stored and modeled in PostgreSQL following a star schema. For visualization, we used Microsoft Power BI to create interactive dashboards and reports, allowing users to explore the sales data and uncover business insights.  
----
-## 🚀 Project Requirements
-
-### Building the Data Warehouse (Data Engineering)
-
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### Specifications
-- **Data Sources**: Import data from source system (MySQL) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
+## 📌 Project Overview
+This project showcases an end-to-end **ETL pipeline** and **data warehouse** built for the Olist Brazilian e-commerce dataset. Using **Apache Airflow**, **PostgreSQL**, and **Power BI**, the pipeline enables analytical reporting and business insights through a structured star schema data model.
 
 ---
-## **About the company**:
-Olist is an e-commerce company based in São Paulo, Brazil. It serves as a centralized platform that connects numerous small businesses with customers who want to purchase their products.  
----
 
-## **About the dataset**:  
-The dataset is publicly available and contains information on over 100,000 orders placed between 2016 and 2018 across multiple marketplaces in Brazil. It is hosted on Kaggle: [](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
-![image](https://github.com/user-attachments/assets/f72cd1a5-7044-4f28-93a2-070390c4e8e7)
----
+## ⚙️ Tech Stack
 
-## **Data Warehouse schema:**  
-We have the order_fact table as our Fact table and it dimensional tables:  
-![image](https://github.com/user-attachments/assets/fed0756b-8c94-4de2-961e-b057e4bd2c67)  
----
-## **The ETL pipeline**:
-To create the Data Warehouse schema, we will execute the following pipeline stages:  
- 1. Create MySQL database, load data from csv to database.   
- 2. Extract data from MySQL to staging stage in Postgres.  
- 3. Clean and Transform the data in staging stage.  
- 4. Load data to Warehouse stage in Postgres.
-
-![image](https://github.com/user-attachments/assets/54ddca2e-1d2f-49ae-968d-13a939c28fe4)  
-
-I also integrated git-sync with Apache Airflow to automate DAG deployments directly from a Git repository. This setup ensures that any updates to the pipeline code are automatically synchronized with the Airflow DAGs folder, streamlining development and deployment across environments.  
-
-![image](https://github.com/user-attachments/assets/d07bf9ee-34c0-4621-9cc9-032811e622a3)
+- **ETL Orchestration**: Apache Airflow (with Git-sync auto-deployment)
+- **Data Source**: CSV → MySQL (simulated raw layer)
+- **Storage & Modeling**: PostgreSQL with star schema design
+- **Languages**: Python, SQL
+- **Visualization**: Microsoft Power BI
+- **Containerization**: Docker
 
 ---
-## **Snapshot DAGs process**:  
-![image](https://github.com/user-attachments/assets/146f639c-e331-4aa0-8673-60fffc7584fb)
+
+## 🧩 Project Goals
+
+- Build a modern data pipeline with clear separation of concerns (bronze, silver, gold layers)
+- Design a scalable star schema for analytical queries
+- Enable business users to explore key metrics via dashboards
+
 ---
 
+## 🏗️ ETL Pipeline Architecture
 
----  
-## **Visualizations**:
-![image](https://github.com/user-attachments/assets/bc8078b3-9f92-4ab8-b6f2-b140169dfd54)  
-![image](https://github.com/user-attachments/assets/ad46ed3d-cc50-4d95-8084-af6017ec9461)
+The pipeline follows a layered architecture inspired by the **Medallion model**:
 
----  
-   
+1. **Bronze (Raw)**: Load CSV data into MySQL → extract into PostgreSQL staging.
+2. **Silver (Staging)**: Clean and transform data (resolve nulls, data types, joins).
+3. **Gold (Warehouse)**: Load clean data into star schema tables for BI use.
 
+> DAGs are orchestrated with Airflow, and Git-sync ensures CI/CD workflow for DAGs deployment.
 
+### 📉 ETL Pipeline Flow
 
+![ETL Pipeline](https://github.com/user-attachments/assets/54ddca2e-1d2f-49ae-968d-13a939c28fe4)
 
+---
 
+## 🗃️ Data Warehouse Schema
 
+- **Fact Table**: `order_fact`
+- **Dimension Tables**: `dim_customers`, `dim_products`, `dim_sellers`, `dim_dates`, `dim_geolocation`
 
+![Star Schema](https://github.com/user-attachments/assets/fed0756b-8c94-4de2-961e-b057e4bd2c67)
+
+---
+
+## ⛓ DAG Snapshots
+
+![Airflow DAG](https://github.com/user-attachments/assets/146f639c-e331-4aa0-8673-60fffc7584fb)
+
+---
+
+## 📊 Power BI Dashboards
+
+Visualizations were created using Power BI to help answer key business questions:
+
+- Top-performing states, categories, sellers
+- Delivery performance & review scores
+- Monthly revenue trends
+
+![Dashboard 1](https://github.com/user-attachments/assets/bc8078b3-9f92-4ab8-b6f2-b140169dfd54)  
+![Dashboard 2](https://github.com/user-attachments/assets/ad46ed3d-cc50-4d95-8084-af6017ec9461)
+
+---
+
+## 🧾 Dataset Info
+
+- **Source**: [Kaggle - Olist Brazilian E-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+- **Time Period**: 2016–2018
+- **Data Volume**: 100K+ orders, 70K+ products, 100K+ customers
+
+---
+
+## 🏢 About Olist
+
+Olist is a Brazil-based platform that connects small merchants with large marketplaces. It simplifies operations by centralizing product listings, logistics, and customer communication.
+
+---
+
+## 📬 Contact
+
+For any questions or collaboration, feel free to reach out!
 
