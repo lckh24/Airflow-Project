@@ -33,7 +33,7 @@ The dataset is publicly available and contains information on over 100,000 order
 We have the order_fact table as our Fact table and it dimensional tables:  
 ![image](https://github.com/user-attachments/assets/fed0756b-8c94-4de2-961e-b057e4bd2c67)  
 ---
-## **The ETL pipeline**:  
+## **The ETL pipeline**:
 To create the Data Warehouse schema, we will execute the following pipeline stages:  
  1. Create MySQL database, load data from csv to database.   
  2. Extract data from MySQL to staging stage in Postgres.  
