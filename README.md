@@ -4,7 +4,7 @@
 ---
 ## **Summary**:
 
-In this project, i built a data warehouse using a sales dataset from Olist, a Brazilian e-commerce platform. I designed and implemented a complete ETL pipeline orchestrated by Apache Airflow, with data stored and modeled in PostgreSQL following a star schema. For visualization, we used Microsoft Power BI to create interactive dashboards and reports, allowing users to explore the sales data and uncover business insights.  
+#### In this project, i built a data warehouse using a sales dataset from Olist, a Brazilian e-commerce platform. I designed and implemented a complete ETL pipeline orchestrated by Apache Airflow, with data stored and modeled in PostgreSQL following a star schema. For visualization, we used Microsoft Power BI to create interactive dashboards and reports, allowing users to explore the sales data and uncover business insights.  
 ---
 ## 🚀 Project Requirements
 
