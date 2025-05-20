@@ -52,12 +52,12 @@ I also integrated git-sync with Apache Airflow to automate DAG deployments direc
 ---
 
 
----
+---  
 ## **Visualizations**:
 ![image](https://github.com/user-attachments/assets/bc8078b3-9f92-4ab8-b6f2-b140169dfd54)  
 ![image](https://github.com/user-attachments/assets/ad46ed3d-cc50-4d95-8084-af6017ec9461)
 
----
+---  
    
 
 
